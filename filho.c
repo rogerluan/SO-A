@@ -3,17 +3,34 @@
 #include <stdio.h>		/* for printf() */
 #include <sys/types.h>		/* for wait() */
 #include <sys/wait.h>		/* for wait() */
+#include <stdlib.h>
 
 int main(int argc, char *argv[]){
-		int count,int no_of_iterations,int micro_per_second,int sleep_time
-		count = argv[0];
+		int count;
+		int no_of_iterations;
+		int micro_per_second;
+		int sleep_time;
+
+		if (argc >= 4) {
+			sleep_time = atoi(argv[4]);	
+		}
+		if (argc >= 3) {
+			micro_per_second = atoi(argv[3]);	
+		}
+		if (argc >= 2) {
+			no_of_iterations = atoi(argv[2]);	
+		}
+		if (argc >= 1) {
+			count = atoi(argv[1]);	
+		}
+
+		printf("\n\n\nChild Number = %d\nIteractions = %d\nMicroPerSec = %d\nSleep Time = %d\n", count, no_of_iterations, micro_per_second, sleep_time);
 		
 		float drift;
-      		int child_no;
+  		int child_no;
 		struct timeval start_time;
 		struct timeval stop_time;
-
-
+		
 		child_no = count;
 
 		/*

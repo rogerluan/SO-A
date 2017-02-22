@@ -41,6 +41,7 @@
 #include <stdio.h>		/* for printf() */
 #include <sys/types.h>		/* for wait() */
 #include <sys/wait.h>		/* for wait() */
+#include <stdlib.h>
 /*
  * Pergunta 1: o que o compilador gcc faz com o arquivo .h, cujo nome aparece ap�s o include?
  */
@@ -125,9 +126,24 @@ int main( int argc, char *argv[] )
 	 */
 
 	if( rtn == 0 ) {
-		execl("teste",2,(char *)NULL);
-		//execl("filho","filho",count, NO_OF_ITERATIONS, MICRO_PER_SECOND, SLEEP_TIME,NULL);
+		char countChar[256];
+		char iterationsChar[256];
+		char microChar[256];
+		char sleepChar[256];
 
+		sprintf(countChar, "%d", count);
+		sprintf(iterationsChar, "%d", NO_OF_ITERATIONS);
+		sprintf(microChar, "%d", MICRO_PER_SECOND);
+		sprintf(sleepChar, "%d", SLEEP_TIME);
+
+		char *my_args[6];
+		my_args[0] = "filho";
+  		my_args[1] = countChar;
+  		my_args[2] = iterationsChar;
+  		my_args[3] = microChar;
+  		my_args[4] = sleepChar;
+  		my_args[5] = NULL;
+  		execv ("filho", my_args);
 	} else {
 		/*
 		 * Sou pai, aguardo o termino dos filhos
