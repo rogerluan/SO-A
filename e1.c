@@ -42,6 +42,7 @@
 #include <sys/types.h>		/* for wait() */
 #include <sys/wait.h>		/* for wait() */
 #include <stdlib.h>
+#include <signal.h>
 /*
  * Pergunta 1: o que o compilador gcc faz com o arquivo .h, cujo nome aparece ap�s o include?
  */
@@ -72,7 +73,7 @@
  * SLEEP_TIME corresponde a quantidade de tempo para ficar bloqueado.
  */
 
-#define SLEEP_TIME 1000
+#define SLEEP_TIME 200
 
 /*
  * MICRO_PER_SECOND define o numero de microsegundos em um segundo
@@ -112,8 +113,10 @@ int main( int argc, char *argv[] )
      */
     
     pid_t rtn = 1;
+    int sleepTime = 200;
     for( count = 0; count < NO_OF_CHILDREN; count++ ) {
         if( rtn > 0 ) {
+            sleepTime+=SLEEP_TIME;
             rtn = fork();
         } else {
             break;
@@ -134,7 +137,7 @@ int main( int argc, char *argv[] )
         sprintf(countChar, "%d", count);
         sprintf(iterationsChar, "%d", NO_OF_ITERATIONS);
         sprintf(microChar, "%d", MICRO_PER_SECOND);
-        sprintf(sleepChar, "%d", SLEEP_TIME);
+        sprintf(sleepChar, "%d", sleepTime);
         
         char *my_args[6];
         my_args[0] = "filho";
@@ -143,6 +146,7 @@ int main( int argc, char *argv[] )
         my_args[3] = microChar;
         my_args[4] = sleepChar;
         my_args[5] = NULL;
+        
         execv ("filho", my_args);
     } else {
         /*
@@ -151,8 +155,8 @@ int main( int argc, char *argv[] )
         for( count = 0; count < NO_OF_CHILDREN; count++ ) {
             wait(NULL);
         }
+        kill(rtn, SIGTERM);
+        exit(0);
     }
-    
-    exit(0);
 }
 

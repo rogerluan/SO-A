@@ -27,7 +27,7 @@ int main(int argc, char *argv[]){
     printf("\n\n\nChild Number = %d\nIteractions = %d\nMicroPerSec = %d\nSleep Time = %d\n", count, no_of_iterations, micro_per_second, sleep_time);
     
     float drift;
-  		int child_no;
+    int child_no;
     struct timeval start_time;
     struct timeval stop_time;
     
@@ -69,5 +69,6 @@ int main(int argc, char *argv[]){
      * Pergunta 5: Qual a relação: entre SLEEP_TIME e o desvio, nenhuma, direta 
      * ou indiretamente proporcional? 
      */
-    return 0;
+    wait(NULL);
+//    return 0;
 }
