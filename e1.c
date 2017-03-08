@@ -36,6 +36,19 @@
  * lah. Caso nao estejam, verifique onde estao e altere o include
  */
 
+/**
+
+Integrantes do Grupo - Sistemas Operacionais A
+
+ALEX VENTURINI  15294739
+BRUNO PEDROSO   12662136
+LUAN BONOMI     15108780
+PEDRO CATALINI  15248354
+ROGER OBA       12048534
+
+*/
+
+
 #include <sys/time.h>		/* for gettimeofday() */
 #include <unistd.h>		/* for gettimeofday() and fork() */
 #include <stdio.h>		/* for printf() */
