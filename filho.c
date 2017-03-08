@@ -62,8 +62,8 @@ int main(int argc, char *argv[]){
      * Exibe os resultados
      */
     printf("Filho #%d -- desvio total: %.5f -- desvio medio: %.5f\n",
-           child_no, drift - no_of_iterations*sleep_time/micro_per_second,
-           (drift - no_of_iterations *sleep_time/micro_per_second)/no_of_iterations);
+           child_no, drift - no_of_iterations*sleep_time/(float)micro_per_second,
+           (drift - no_of_iterations *sleep_time/(float)micro_per_second)/no_of_iterations);
     
     /*
      * Pergunta 5: Qual a relação: entre SLEEP_TIME e o desvio, nenhuma, direta 
