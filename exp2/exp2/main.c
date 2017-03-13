@@ -170,7 +170,7 @@ int main(int argc, char *argv[]) {
         /*
          * Removendo a fila de mensagens
          */
-        if (msgctl(queue_id, IPC_RMID, NULL) == 0) {
+        if (msgctl(queue_id, IPC_RMID, NULL) == -1) {
             printf("Impossivel remover a fila!\n");
             exit(1);
         }
