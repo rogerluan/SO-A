@@ -77,11 +77,12 @@
 /*
  * Includes Necessarios
  */
-#include <sys/time.h>		/* for gettimeofday() */
-#include <stdio.h>		/* for printf() */
-#include <unistd.h>		/* for fork() */
-#include <sys/types.h>		/* for wait(), msgget(), msgctl() */		//faltando sys
-#include <sys/wait.h>		/* for wait() */				//faltando sys
+#include <sys/time.h>   // gettimeofday()
+#include <stdio.h>		// printf()
+#include <stdlib.h>     // exit()
+#include <unistd.h>		// fork()
+#include <sys/types.h>		/* for wait(), msgget(), msgctl() */	//faltando sys
+#include <sys/wait.h>		/* for wait() */                        //faltando sys
 #include <sys/ipc.h>		/* for msgget(), msgctl() */			//faltando sys
 #include <sys/msg.h>		/* for msgget(), msgctl() */			//faltando sys
 
@@ -102,16 +103,8 @@
  * ao mesmo tempo, o numero pode ter que ser mudado!
  */
 #define MESSAGE_QUEUE_ID	3102
-
-/*
- * Constantes
- */
 #define SENDER_DELAY_TIME	10
 #define MESSAGE_MTYPE		1
-
-/*
- * Filhos
- */
 #define NO_OF_CHILDREN 		2 // acrescentando numero de filhos
 
 void Receiver(int queue_id);
@@ -120,14 +113,8 @@ void Sender(int queue_id);
  * Pergunta 1: O que eh um protÛtipo? Por qual motivo eh usado?
  */
 
-/*
- * Programa principal
- */
 int main(int argc, char *argv[]) {
-    /*
-     * Algumas variaveis necessarias
-     */
-    int rtn = 1;				//inicia um valor para rtn
+    int rtn = 1;				//inicializa rtn
     int count = 0, i = 0;
     
     /*
@@ -183,8 +170,8 @@ int main(int argc, char *argv[]) {
         /*
          * Removendo a fila de mensagens
          */
-        if (msgctl(queue_id,IPC_RMID,NULL) == 0) {
-            fprintf(stderr,"Impossivel remover a fila!\n");
+        if (msgctl(queue_id, IPC_RMID, NULL) == 0) {
+            printf("Impossivel remover a fila!\n");
             exit(1);
         }
         /*
@@ -241,7 +228,7 @@ void Receiver(int queue_id) {
      */
     data_t *data_ptr = (data_t *)(message_buffer.mtext);
     
-    //* Pergunta 8: Qual ser· o conte˙do de data_ptr?
+    // Pergunta 8: Qual ser· o conte˙do de data_ptr?
     
     for (count = 0; count < NO_OF_ITERATIONS; ++count) {
         /*
@@ -256,14 +243,14 @@ void Receiver(int queue_id) {
         
         delta = receive_time.tv_sec - data_ptr->send_time.tv_sec;
         delta += (receive_time.tv_usec - data_ptr->send_time.tv_usec) / (float)MICRO_PER_SECOND;
-        total += -delta;
+        total += delta;
         
         if (delta > max) {
             max = delta;
         }
     }
-    printf("O tempo medio de transferencia: %.8f\n", total / NO_OF_ITERATIONS);
-    printf("O tempo maximo de transferencia: %.8f\n", max);
+    printf("O tempo medio de transferencia: \t%.12f\n", total / NO_OF_ITERATIONS);
+    printf("O tempo maximo de transferencia: \t%.12f\n", max);
     
     return;
 }
@@ -287,7 +274,7 @@ void Sender(int queue_id) {
     data_t *data_ptr = (data_t *)(message_buffer.mtext);
 
     for (count = 0; count < NO_OF_ITERATIONS; count++) {
-        gettimeofday(&send_time,NULL);
+        gettimeofday(&send_time, NULL);
         
         /*
          * Apronta os dados
@@ -300,7 +287,7 @@ void Sender(int queue_id) {
          * Envia a mensagem... usa a identificacao da fila, um ponteiro
          * para o buffer, e o tamanho dos dados enviados
          */
-        if (msgsnd(queue_id,(struct msgbuf *)&message_buffer,sizeof(data_t),0) == -1) {
+        if (msgsnd(queue_id, (struct msgbuf *)&message_buffer,sizeof(data_t),0) == -1) {
             fprintf(stderr, "Impossivel enviar mensagem!\n");
             exit(1);
         }
