@@ -127,7 +127,7 @@ int main(int argc, char *argv[]) {
      * Cria a fila de mensagens
      */
     if ((queue_id = msgget(key, IPC_CREAT | 0666)) == -1) {
-        fprintf(stderr,"Impossivel criar a fila de mensagens!\n");
+        fprintf(stderr, "Impossivel criar a fila de mensagens!\n");
         exit(1);
     }
     
@@ -234,12 +234,12 @@ void Receiver(int queue_id) {
         /*
          * Recebe qualquer mensagem do tipo MESSAGE_MTYPE
          */
-        if (msgrcv(queue_id,(struct msgbuf *)&message_buffer,sizeof(data_t),MESSAGE_MTYPE,0) == -1) {
+        if (msgrcv(queue_id, (struct msgbuf *)&message_buffer, sizeof(data_t), MESSAGE_MTYPE,0) == -1) {
             fprintf(stderr, "Impossivel receber mensagem!\n");
             exit(1);
         }
 
-        gettimeofday(&receive_time,NULL);
+        gettimeofday(&receive_time, NULL);
         
         delta = receive_time.tv_sec - data_ptr->send_time.tv_sec;
         delta += (receive_time.tv_usec - data_ptr->send_time.tv_usec) / (float)MICRO_PER_SECOND;
@@ -287,7 +287,7 @@ void Sender(int queue_id) {
          * Envia a mensagem... usa a identificacao da fila, um ponteiro
          * para o buffer, e o tamanho dos dados enviados
          */
-        if (msgsnd(queue_id, (struct msgbuf *)&message_buffer,sizeof(data_t),0) == -1) {
+        if (msgsnd(queue_id, (struct msgbuf *)&message_buffer, sizeof(data_t), 0) == -1) {
             fprintf(stderr, "Impossivel enviar mensagem!\n");
             exit(1);
         }
