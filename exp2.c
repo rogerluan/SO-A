@@ -1,9 +1,13 @@
 //
-//  main.c
-//  exp2
+//  exp2.c
 //
-//  Created by Roger Luan on 13/03/17.
-//  Copyright © 2017 Roger Oba. All rights reserved.
+//  Created on 13/03/17
+//
+//  ALEX VENTURINI  15294739
+//  BRUNO PEDROSO   12662136
+//  LUAN BONOMI     15108780
+//  PEDRO CATALINI  15248354
+//  ROGER OBA       12048534
 //
 
 /*******************************************************************************
