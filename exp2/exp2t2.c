@@ -317,7 +317,11 @@ void sendCalculatedData(int queue_id, data_t *calculatedData) {
     msgbuf_t message_buffer;
     data_t *calculatedDataPointer = (data_t *)(message_buffer.mtext);
     message_buffer.mtype = MESSAGE_MTYPE_DATA;
-    calculatedDataPointer = calculatedData;
+//    calculatedDataPointer = calculatedData;
+    calculatedDataPointer->min = calculatedData->min;
+    calculatedDataPointer->max = calculatedData->max;
+    calculatedDataPointer->med = calculatedData->med;
+    calculatedDataPointer->total = calculatedData->total;
     
     if (msgsnd(queue_id, (struct msgbuf *)&message_buffer, sizeof(data_t), 0) == -1) {
         fprintf(stderr, "Nao foi possivel enviar a mensagem neste momento.\n");
@@ -331,17 +335,10 @@ void receiveCalculatedData(int queue_id) {
     msgbuf_t message_buffer;
     data_t *data_ptr = (data_t *)(message_buffer.mtext);
     
-    ssize_t receivedBytes = -1;
-    
-    
-    while (receivedBytes <= 0) {
-        receivedBytes = msgrcv(queue_id, (struct msgbuf *)&message_buffer, sizeof(data_t), MESSAGE_MTYPE_DATA, 0);
-        printf("received bytes = %zd, expectedBytes = %zd", receivedBytes, sizeof(data_t));
-        fprintf(stderr, "\nImpossivel receber mensagem dos dados calculados!\n\n");
-//        exit(1);
+    if (msgrcv(queue_id, (struct msgbuf *)&message_buffer, sizeof(data_t), MESSAGE_MTYPE_DATA, 0) == -1) {
+        fprintf(stderr, "\nImpossivel receber mensagem dos dados calculados!\n");
+        exit(1);
     }
-
-//    printf("received bytes :::::::::::: %zd\n", receivedBytes);
     
     printf("RECEIVER: O tempo medio de transferencia: \t%.12f\n", data_ptr->med);
     printf("RECEIVER: O tempo maximo de transferencia: \t%.12f\n", data_ptr->max);
