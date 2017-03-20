@@ -89,6 +89,7 @@
 #include <sys/wait.h>		/* for wait() */                        //faltando sys
 #include <sys/ipc.h>		/* for msgget(), msgctl() */			//faltando sys
 #include <sys/msg.h>		/* for msgget(), msgctl() */			//faltando sys
+#include <stdbool.h>
 
 /*
  * NO_OF_ITERATIONS corresponde ao numero de mensagens que serao enviadas.
@@ -106,12 +107,21 @@
  * que deve ser unico. Se outra pessoa estiver executando este mesmo programa
  * ao mesmo tempo, o numero pode ter que ser mudado!
  */
-#define MESSAGE_QUEUE_ID	3102
+#define MESSAGE_QUEUE_ID1	3102
+#define MESSAGE_QUEUE_ID2	6204
 #define SENDER_DELAY_TIME	10
 #define MESSAGE_MTYPE		1
 #define NO_OF_CHILDREN 		2 // acrescentando numero de filhos
 
-void Receiver(int queue_id);
+
+/**
+ Receives data from the message queue.
+
+ @param queue_id message queue id
+ @param isCalculatedData boolean value that tells the function if we should calculate the data or not.
+ @return returns the queue id of the temp message queue
+ */
+int Receiver(int queue_id, bool isCalculatedData);
 void Sender(int queue_id);
 /*
  * Pergunta 1: O que eh um protÛtipo? Por qual motivo eh usado?
@@ -124,16 +134,7 @@ int main(int argc, char *argv[]) {
     /*
      * Variaveis relativas a fila, id e key
      */
-    int queue_id;
-    key_t key = MESSAGE_QUEUE_ID;
-    
-    /*
-     * Cria a fila de mensagens
-     */
-    if ((queue_id = msgget(key, IPC_CREAT | 0666)) == -1) {
-        fprintf(stderr, "Impossivel criar a fila de mensagens!\n");
-        exit(1);
-    }
+    key_t key1 = MESSAGE_QUEUE_ID1;
     
     /*
      * Pergunta 2: O que significa cada um dos dÌgitos 0666?
@@ -158,19 +159,18 @@ int main(int argc, char *argv[]) {
      * OBS:  o valor de count no loop anterior indicara cada um dos filhos
      *       count = 1 para o primeiro filho, 2 para o segundo, etc.
      */
-
+    
     if (rtn == 0 && count == 1) {
+        /*
+         * Cria a primeira fila de mensagens
+         */
+        int queue_id;
+        if ((queue_id = msgget(key1, IPC_CREAT | 0666)) == -1) {
+            fprintf(stderr, "Impossivel criar a fila de mensagens!\n");
+            exit(1);
+        }
         printf("Receptor iniciado ...\n"); 		// fechando aspas
-        Receiver(queue_id);
-        exit(0);
-    } else if (rtn == 0 && count == 2) {		// faltando um = na comparaÁ„o
-        printf("Emissor iniciado ...\n");
-        Sender(queue_id);
-        exit(0);
-    } else {
-        printf("Pai aguardando os filhos terminarem...\n");
-        wait(NULL);
-        wait(NULL);
+        int calculatedDataQueueId = Receiver(queue_id, 0);
         
         /*
          * Removendo a fila de mensagens
@@ -179,6 +179,29 @@ int main(int argc, char *argv[]) {
             printf("Impossivel remover a fila!\n");
             exit(1);
         }
+        
+        pid_t pid = -1;
+        pid = fork();
+        
+        if (pid == -1) {
+            printf("Ocorreu um erro ao criar o terceiro filho.");
+        } else if (pid == 0) {
+            //processo pai == segundo filho
+        } else if (pid > 0) {
+            Receiver(queue_id, )
+            //Processo filho (terceiro filho ==
+        }
+        
+        exit(0);
+    } else if (rtn == 0 && count == 2) {		// faltando um = na comparacao
+        printf("Emissor iniciado ...\n");
+        Sender();
+        
+        exit(0);
+    } else {
+        printf("Pai aguardando os filhos terminarem...\n");
+        wait(NULL);
+        wait(NULL);
         /*
          * Pergunta 7: O que ocorre com a fila de mensagens, se ela n„o È removida e os
          * processos terminam?
@@ -215,7 +238,7 @@ typedef struct {
 /*
  * Esta funcao executa o recebimento das mensagens
  */
-void Receiver(int queue_id) {
+int Receiver(int queue_id, bool isCalculatedData) {
     int count;
     struct timeval receive_time;
     float delta = 0;
@@ -240,11 +263,11 @@ void Receiver(int queue_id) {
         /*
          * Recebe qualquer mensagem do tipo MESSAGE_MTYPE
          */
-        if (msgrcv(queue_id, (struct msgbuf *)&message_buffer, sizeof(data_t), MESSAGE_MTYPE,0) == -1) {
+        if (msgrcv(queue_id, (struct msgbuf *)&message_buffer, sizeof(data_t), MESSAGE_MTYPE, 0) == -1) {
             fprintf(stderr, "Impossivel receber mensagem!\n");
             exit(1);
         }
-
+        
         gettimeofday(&receive_time, NULL);
         
         delta = receive_time.tv_sec - data_ptr->send_time.tv_sec;
@@ -261,13 +284,21 @@ void Receiver(int queue_id) {
     printf("O tempo medio de transferencia: \t%.12f\n", total / NO_OF_ITERATIONS);
     printf("O tempo maximo de transferencia: \t%.12f\n", max);
     
-    return;
+    //cria a segunda fila de mensagens
+    
+    if ((queue_id = msgget(MESSAGE_QUEUE_ID2, IPC_CREAT | 0666)) == -1) {
+        fprintf(stderr, "Impossivel criar a fila de mensagens!\n");
+        exit(1);
+    }
+    Sender(queue_id);
+    
+    return queue_id;
 }
 
 /*
  * Esta funcao envia mensagens
  */
-void Sender(int queue_id) {
+void Sender(int queue_id, ) {
     int count;
     struct timeval send_time;
     
@@ -281,7 +312,7 @@ void Sender(int queue_id) {
      * como e setado para apontar para mtext no buffer
      */
     data_t *data_ptr = (data_t *)(message_buffer.mtext);
-
+    
     for (count = 0; count < NO_OF_ITERATIONS; count++) {
         gettimeofday(&send_time, NULL);
         
