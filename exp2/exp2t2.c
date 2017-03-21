@@ -85,12 +85,7 @@
 #include <stdio.h>		// printf()
 #include <stdlib.h>     // exit()
 #include <unistd.h>		// fork()
-#include <sys/types.h>		/* for wait(), msgget(), msgctl() */	//faltando sys
-#include <sys/wait.h>		/* for wait() */                        //faltando sys
-#include <sys/ipc.h>		/* for msgget(), msgctl() */			//faltando sys
 #include <sys/msg.h>		/* for msgget(), msgctl() */			//faltando sys
-#include <stdbool.h>
-#include <float.h>
 
 /*
  * NO_OF_ITERATIONS corresponde ao numero de mensagens que serao enviadas.
