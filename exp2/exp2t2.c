@@ -219,12 +219,14 @@ int main(int argc, char *argv[]) {
         printf("Emissor iniciado ...\n");
         int first_queue_id = createOrGetQueueIdWithKey(MESSAGE_QUEUE_KEY1);
         sendTimeMessage(first_queue_id);
-        
+        printf("filho 1 terminando...\n");
         exit(0);
     } else {
         printf("Pai aguardando os filhos terminarem...\n");
+//        waitpid(-1, WIFEXITED, <#int#>)(NULL);
         wait(NULL);
         wait(NULL);
+        printf("Pai terminando...\n");
         exit(0);
     }
 }
@@ -275,7 +277,7 @@ data_t *receiveTimeMessage(int queue_id) {
     printf("SENDER: O tempo minimo de transferencia: \t%.12f\n", min);
     printf("SENDER: O tempo total de transferencia: \t%.12f\n", total);
     
-    data_t *calculatedData;
+    data_t *calculatedData = malloc(sizeof(data_t));
     calculatedData->min = min;
     calculatedData->max = max;
     calculatedData->total = total;
