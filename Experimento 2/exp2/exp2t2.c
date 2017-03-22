@@ -10,74 +10,6 @@
 //  ROGER OBA       12048534
 //
 
-/*******************************************************************************
- *
- * Este programa faz parte do curso sobre tempo real do Laboratorio Embry-Riddle
- *
- * Seguem os comentarios originais:
- *
- * Experiment #3: Shared Resources, Measureing Message Queue Transfer Time
- *
- *    Programmer: Eric Sorton
- *          Date: 2/11/97
- *           For: MSE599, Special Topics Class
- *
- *       Purpose: The purpose of this program is to measure the time it takes
- *                a message to be transfered across a message queue.  The
- *                total time will include the time to make the call to msgsnd(),
- *                the time for the system to transfer the message, the time
- *                for the context switch, and finally, the time for the other
- *                end to call msgrcv().
- *
- *                The algorithm for this program is very simple:
- *
- *                   o The parent creates the message queue
- *                   o The parents starts two children
- *                   o The first child will:
- *                         - Receive a message on the queue
- *                         - Call gettimeofday() to get the current time
- *                         - Using the time in the message, calculate
- *                              the difference and store it in an array
- *                         - Loop (X number of times)
- *	   			  - Display the results
- *                   o The second child will:
- *                         - Call gettimeofday() to get the current time
- *                         - Place the time in a message
- *                         - Place the message on the queue
- *                         - Pause to allow the other child to run
- *                         - Loop (X number of times)
- *                   o The parent waits for the children to finish
- *
- * Traduzindo:
- *
- *     PropÛsito: O propÛsito deste programa È a medicao do tempo que leva
- *                uma mensagem para ser transferida por uma fila de mensagens.
- *                O tempo total incluira o tempo para realizar a chamada
- *                msgsnd(), o tempo para o sistema transferir a mensagem, o
- *                tempo para troca de contexto e, finalmente, o tempo para,
- *                na outra ponta, ocorrer a chamada msgrcv().
- *
- *                O algoritmo para este programa e bastante simples:
- *
- *                   o O pai cria a fila de mensagens
- *                   o O pai inicializa dois filhos
- *                   o O primeiro filho:
- *                         - Recebe uma mensagem pela fila
- *                         - Chama gettimeofday() para obter o tempo atual
- *                         - Usando o tempo existente na mensagem, calcula
- *                              a diferenca
- *                         - Repete (numero X de vezes)
- *				  - Exibe os resultados
- *                   o O segundo filho:
- *                         - Chama gettimeofday() para obter o tempo atual
- *                         - Coloca o tempo em uma mensagem
- *                         - Coloca a mensagem na fila
- *                         - Realiza uma pausa para permitir a execucao do irmao
- *                         - Repete (numero X de vezes)
- *                   o O pai espera os filhos terminarem
- *
- *******************************************************************************/
-
 /*
  * Includes Necessarios
  */
@@ -88,28 +20,14 @@
 #include <sys/msg.h>		/* for msgget(), msgctl() */
 #include <sys/wait.h>		/* for wait() */
 
-/*
- * NO_OF_ITERATIONS corresponde ao numero de mensagens que serao enviadas.
- * Se este numero cresce, o tempo de execucao tambem deve crescer.
- */
 #define NO_OF_ITERATIONS	500
-
-/*
- * MICRO_PER_SECOND define o numero de microsegundos em um segundo
- */
 #define MICRO_PER_SECOND	1000000
-
-/*
- * MESSAGE_QUEUE_ID eh uma chave arbitraria, foi escolhido um numero qualquer,
- * que deve ser unico. Se outra pessoa estiver executando este mesmo programa
- * ao mesmo tempo, o numero pode ter que ser mudado!
- */
 #define MESSAGE_QUEUE_KEY1	3102
 #define MESSAGE_QUEUE_KEY2	6204
 #define SENDER_DELAY_TIME	10
 #define MESSAGE_MTYPE_TIME  1
 #define MESSAGE_MTYPE_DATA  2
-#define NO_OF_CHILDREN 		2 // acrescentando numero de filhos
+#define NO_OF_CHILDREN 		2
 
 //********************** Data Structures **********************//
 
@@ -341,7 +259,7 @@ int createOrGetQueueIdWithKey(key_t key) {
 void deleteQueueWithId(int queue_id) {
     printf("Deletando fila de mensagem com o id: %d\n", queue_id);
     if (msgctl(queue_id, IPC_RMID, NULL) == -1) {
-        printf("Impossivel remover a fila com id: %d\n", queue_id);
+        fprintf(stderr, "Impossivel remover a fila com id: %d\n", queue_id);
         exit(1);
     }
 }
