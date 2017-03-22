@@ -85,12 +85,7 @@
 #include <stdio.h>		// printf()
 #include <stdlib.h>     // exit()
 #include <unistd.h>		// fork()
-#include <sys/types.h>		/* for wait(), msgget(), msgctl() */	//faltando sys
-#include <sys/wait.h>		/* for wait() */                        //faltando sys
-#include <sys/ipc.h>		/* for msgget(), msgctl() */			//faltando sys
 #include <sys/msg.h>		/* for msgget(), msgctl() */			//faltando sys
-#include <stdbool.h>
-#include <float.h>
 
 /*
  * NO_OF_ITERATIONS corresponde ao numero de mensagens que serao enviadas.
@@ -137,7 +132,7 @@ typedef struct {
     char mtext[sizeof(data_t)];
 } msgbuf_t;
 
-/**** Functions Declarations ****/
+//********************** Functions Declarations **********************//
 
 /**
  Sends the current time information to the message queue
@@ -184,11 +179,13 @@ int createOrGetQueueIdWithKey(key_t key);
  */
 void deleteQueueWithId(int queue_id);
 
+//********************** Implementation **********************//
+
 int main(int argc, char *argv[]) {
-    int rtn = 1;				//inicializa rtn
+    int rtn = 1;
     int count = 0, i = 0;
     
-    for (i = 0; i < NO_OF_CHILDREN; i++) {	//consertando o contador
+    for (i = 0; i < NO_OF_CHILDREN; i++) {
         if (rtn > 0) {
             rtn = fork();
             count++;
@@ -198,44 +195,41 @@ int main(int argc, char *argv[]) {
     }
     
     if (rtn == 0 && count == 1) {
-        // Cria a primeira fila de mensagens
         int first_queue_id = createOrGetQueueIdWithKey(MESSAGE_QUEUE_KEY1);
-        printf("Receptor iniciado ...\n"); 		// fechando aspas
+        printf("Receptor iniciado...\n");
         data_t *calculatedData = receiveTimeMessage(first_queue_id);
         deleteQueueWithId(first_queue_id);
         
         pid_t pid = fork();
         if (pid == -1) {
-            printf("Ocorreu um erro ao criar o terceiro filho.\n");
+            fprintf(stderr, "Ocorreu um erro ao criar o terceiro filho.\n");
         } else if (pid == 0) {
-            printf("Processo pai == segundo filho, cria a segunda fila e envia os dados\n");
             int second_queue_id = createOrGetQueueIdWithKey(MESSAGE_QUEUE_KEY2);
             sendCalculatedData(second_queue_id, calculatedData);
             exit(0);
         } else if (pid > 0) {
-            printf("Processo filho == terceiro filho, recebe a mensagem e printa\n");
+            printf("Terceiro filho iniciado...\n");
             int second_queue_id = createOrGetQueueIdWithKey(MESSAGE_QUEUE_KEY2);
             receiveCalculatedData(second_queue_id);
             wait(NULL);
             deleteQueueWithId(second_queue_id);
             exit(0);
         }
-    } else if (rtn == 0 && count == 2) {		// faltando um = na comparacao
-        printf("Emissor iniciado ...\n");
+    } else if (rtn == 0 && count == 2) {
+        printf("Emissor iniciado...\n");
         int first_queue_id = createOrGetQueueIdWithKey(MESSAGE_QUEUE_KEY1);
         sendTimeMessage(first_queue_id);
-        
         exit(0);
     } else {
         printf("Pai aguardando os filhos terminarem...\n");
         wait(NULL);
         wait(NULL);
+        printf("Pai terminando...\n");
         exit(0);
     }
 }
 
 data_t *receiveTimeMessage(int queue_id) {
-    printf("Function - Receive Time Message with queue id: %d\n", queue_id);
     int count;
     struct timeval receive_time;
     float delta = 0;
@@ -247,16 +241,6 @@ data_t *receiveTimeMessage(int queue_id) {
     data_t *data_ptr = (data_t *)(message_buffer.mtext);
     
     for (count = 0; count < NO_OF_ITERATIONS; ++count) {
-//        ssize_t msgrcvBytesRead = 0;
-//        while (msgrcvBytesRead < sizeof(data_t)) {
-//            ssize_t msgrcvReturnValue = msgrcv(queue_id, (struct msgbuf *)&message_buffer, sizeof(data_t), MESSAGE_MTYPE_TIME, 0);
-//            if (msgrcvReturnValue == -1) {
-//                fprintf(stderr, "A leitura da fila de mensagens retornou um erro, abortando.!\n");
-//                exit(1);
-//            } else {
-//                msgrcvBytesRead += msgrcvReturnValue;
-//            }
-//        }
         if (msgrcv(queue_id, (struct msgbuf *)&message_buffer, sizeof(data_t), MESSAGE_MTYPE_TIME, 0) == -1) {
             fprintf(stderr, "Impossivel receber mensagem! receiveTimeMessage, count:%d \n", count);
             exit(1);
@@ -275,12 +259,8 @@ data_t *receiveTimeMessage(int queue_id) {
             min = delta;
         }
     }
-    printf("SENDER: O tempo medio de transferencia: \t%.12f\n", total / NO_OF_ITERATIONS);
-    printf("SENDER: O tempo maximo de transferencia: \t%.12f\n", max);
-    printf("SENDER: O tempo minimo de transferencia: \t%.12f\n", min);
-    printf("SENDER: O tempo total de transferencia: \t%.12f\n", total);
     
-    data_t *calculatedData;
+    data_t *calculatedData = malloc(sizeof(data_t));
     calculatedData->min = min;
     calculatedData->max = max;
     calculatedData->total = total;
@@ -290,7 +270,7 @@ data_t *receiveTimeMessage(int queue_id) {
 }
 
 void sendTimeMessage(int queue_id) {
-    printf("Function - Send Time Message with queue id: %d\n", queue_id);
+    printf("Enviando as mensagens de medicao de tempo...\n");
     int count;
     struct timeval send_time;
     msgbuf_t message_buffer;
@@ -309,15 +289,14 @@ void sendTimeMessage(int queue_id) {
 
         usleep(SENDER_DELAY_TIME);
     }
-    return;
+    printf("Todas as mensagens foram enviadas com sucesso!\n");
 }
 
 void sendCalculatedData(int queue_id, data_t *calculatedData) {
-    printf("Function - Did Start Send Calculated Data with queue id: %d\n", queue_id);
+    printf("Enviando os dados calculados...\n");
     msgbuf_t message_buffer;
     data_t *calculatedDataPointer = (data_t *)(message_buffer.mtext);
     message_buffer.mtype = MESSAGE_MTYPE_DATA;
-//    calculatedDataPointer = calculatedData;
     calculatedDataPointer->min = calculatedData->min;
     calculatedDataPointer->max = calculatedData->max;
     calculatedDataPointer->med = calculatedData->med;
@@ -326,28 +305,30 @@ void sendCalculatedData(int queue_id, data_t *calculatedData) {
     if (msgsnd(queue_id, (struct msgbuf *)&message_buffer, sizeof(data_t), 0) == -1) {
         fprintf(stderr, "Nao foi possivel enviar a mensagem neste momento.\n");
         exit(1);
+    } else {
+        printf("Os dados calculados foram enviados com sucesso!\n");
     }
-    printf("Function - Did Finish Send Calculated Data with queue id: %d\n", queue_id);
 }
 
 void receiveCalculatedData(int queue_id) {
-    printf("Function - Receive Calculated Data with queue_id: %d\n", queue_id);
+    printf("Recebendo os dados calculados...\n");
     msgbuf_t message_buffer;
     data_t *data_ptr = (data_t *)(message_buffer.mtext);
     
     if (msgrcv(queue_id, (struct msgbuf *)&message_buffer, sizeof(data_t), MESSAGE_MTYPE_DATA, 0) == -1) {
         fprintf(stderr, "\nImpossivel receber mensagem dos dados calculados!\n");
         exit(1);
+    } else {
+        printf("Os dados calculados foram recebidos com sucesso!\n");
     }
     
-    printf("RECEIVER: O tempo medio de transferencia: \t%.12f\n", data_ptr->med);
-    printf("RECEIVER: O tempo maximo de transferencia: \t%.12f\n", data_ptr->max);
-    printf("RECEIVER: O tempo minimo de transferencia: \t%.12f\n", data_ptr->min);
-    printf("RECEIVER: O tempo total de transferencia: \t%.12f\n", data_ptr->total);
+    printf("Receptor: O tempo minimo de transferencia foi: \t%.12f\n", data_ptr->min);
+    printf("Receptor: O tempo maximo de transferencia foi: \t%.12f\n", data_ptr->max);
+    printf("Receptor: O tempo total de transferencia foi: \t%.12f\n", data_ptr->total);
+    printf("Receptor: O tempo medio de transferencia foi: \t%.12f\n", data_ptr->med);
 }
 
 int createOrGetQueueIdWithKey(key_t key) {
-    printf("Criando fila de mensagem com a chave: %d\n", key);
     int queue_id;
     if ((queue_id = msgget(key, IPC_CREAT | 0666)) == -1) {
         fprintf(stderr, "Impossivel criar a fila de mensagens com a chave: %d\n", key);
@@ -363,4 +344,3 @@ void deleteQueueWithId(int queue_id) {
         exit(1);
     }
 }
-
