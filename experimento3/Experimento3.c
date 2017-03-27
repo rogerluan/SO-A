@@ -104,7 +104,7 @@ int main(int argc, char *argv[]) {
         exit(1);
     }
     
-    if (semop(g_sem_id, g_sem_op_lock, sizeof(g_sem_op_lock)) == -1) {
+    if (semop(g_sem_id, g_sem_op_lock, 1) == -1) {
         fprintf(stderr, "chamada semop() falhou, impossivel inicializar o semaforo!");
         exit(1);
     }
@@ -137,9 +137,10 @@ int main(int argc, char *argv[]) {
     int count;
     for (count = 0; count < NO_OF_CHILDREN; ++count) {
         if (rtn != 0) {
-            pid[count] = rtn = fork();
+            rtn = fork();
+            pid[count] = rtn;
         } else {
-            exit(0);
+            break;
         }
     }
     
@@ -147,7 +148,7 @@ int main(int argc, char *argv[]) {
      * Verificando o valor retornado para determinar se o processo e
      * pai ou filho
      */
-    if (rtn > 0) {
+    if (rtn == 0) {
         // Eu sou um filho
         printf("Filho %i comecou ...\n", count);
         printChars();
@@ -164,12 +165,16 @@ int main(int argc, char *argv[]) {
         if (shmctl(g_shm_id, IPC_RMID, NULL) != 0) {
             fprintf(stderr, "Impossivel remover o segmento de memoria compartilhada!\n");
             exit(1);
+        } else {
+            fprintf(stdout, "Segmento de memoria compartilhada removida com sucesso!\n");
         }
         
         // Removendo o semaforo
         if (semctl(g_sem_id, 0, IPC_RMID, 0) != 0) {
             fprintf(stderr, "Impossivel remover o conjunto de semaforos!\n");
             exit(1);
+        } else {
+            fprintf(stdout, "Conjunto de semaforos removidos com sucesso!\n");
         }
         exit(0);
     }
@@ -192,7 +197,6 @@ int main(int argc, char *argv[]) {
 void printChars() {
     struct timeval tv;
     int number;
-    
     int tmp_index;
     int i;
     
@@ -229,7 +233,7 @@ void printChars() {
          */
         
 #ifdef PROTECT
-        if (semop(g_sem_id, g_sem_op1, 1) == -1) {
+        if (semop(g_sem_id, g_sem_op_lock, 1) == -1) {
             fprintf(stderr,"chamada semop() falhou, impossivel fechar o recurso!");
             exit(1);
         }
@@ -246,7 +250,7 @@ void printChars() {
          */
         for (i = 0; i < number; ++i) {
             if (!(tmp_index + i > sizeof(g_letters_and_numbers))) {
-                fprintf(stderr,"%c", g_letters_and_numbers[tmp_index + i]);
+                fprintf(stdout,"%c", g_letters_and_numbers[tmp_index + i]);
                 usleep(1);
             }
         }
@@ -263,7 +267,7 @@ void printChars() {
          * zero no indice
          */
         if (tmp_index + i > sizeof(g_letters_and_numbers)) {
-            fprintf(stderr,"\n");
+            fprintf(stdout,"\n");
             *g_shm_addr = 0;
         }
         
@@ -272,8 +276,8 @@ void printChars() {
          */
         
 #ifdef PROTECT
-        if (semop(g_sem_id, g_sem_op1, 1) == -1) {
-            fprintf(stderr,"chamada semop() falhou, impossivel liberar o recurso!");
+        if (semop(g_sem_id, g_sem_op_unlock, 1) == -1) {
+            fprintf(stdout,"chamada semop() falhou, impossivel liberar o recurso!");
             exit(1);
         }
 #endif
