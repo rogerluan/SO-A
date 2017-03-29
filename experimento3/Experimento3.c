@@ -10,7 +10,7 @@
 //  ROGER OBA       12048534
 //
 
-#define PROTECT
+//#define PROTECT
 
 /*
  * Includes Necessarios
@@ -104,7 +104,7 @@ int main(int argc, char *argv[]) {
         exit(1);
     }
     
-    if (semop(g_sem_id, g_sem_op_lock, 1) == -1) {
+    if (semop(g_sem_id, g_sem_op_unlock, 1) == -1) {
         fprintf(stderr, "chamada semop() falhou, impossivel inicializar o semaforo!");
         exit(1);
     }
@@ -166,7 +166,7 @@ int main(int argc, char *argv[]) {
             fprintf(stderr, "Impossivel remover o segmento de memoria compartilhada!\n");
             exit(1);
         } else {
-            fprintf(stdout, "Segmento de memoria compartilhada removida com sucesso!\n");
+            fprintf(stdout, "Segmento de memoria compartilhada removido com sucesso!\n");
         }
         
         // Removendo o semaforo
@@ -174,7 +174,7 @@ int main(int argc, char *argv[]) {
             fprintf(stderr, "Impossivel remover o conjunto de semaforos!\n");
             exit(1);
         } else {
-            fprintf(stdout, "Conjunto de semaforos removidos com sucesso!\n");
+            fprintf(stdout, "Conjunto de semaforos removido com sucesso!\n");
         }
         exit(0);
     }
@@ -189,7 +189,7 @@ int main(int argc, char *argv[]) {
  * Esta rotina realiza a exibicao de caracteres. Nela e calculado um numero
  * pseudo-randomico entre 1 e 3 para determinar o numero de caracteres a exibir.
  * Se a protecao esta estabelecida, a rotina entao consegue o recurso. Em
- * seguida, PrintChars() acessa o indice com seu valor corrente a partir da
+ * seguida, printChars() acessa o indice com seu valor corrente a partir da
  * memoria compartilhada. A rotina entra em loop, exibindo o numero aleatorio de
  * caracteres. Finalmente, a rotina incrementa o indice, conforme o necessario,
  * e libera o recurso, se for o caso.
@@ -267,7 +267,7 @@ void printChars() {
          * zero no indice
          */
         if (tmp_index + i > sizeof(g_letters_and_numbers)) {
-            fprintf(stdout,"\n");
+            fprintf(stdout, "\n");
             *g_shm_addr = 0;
         }
         
@@ -277,7 +277,7 @@ void printChars() {
         
 #ifdef PROTECT
         if (semop(g_sem_id, g_sem_op_unlock, 1) == -1) {
-            fprintf(stdout,"chamada semop() falhou, impossivel liberar o recurso!");
+            fprintf(stdout, "chamada semop() falhou, impossivel liberar o recurso!");
             exit(1);
         }
 #endif
