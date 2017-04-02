@@ -10,7 +10,7 @@
 //  ROGER OBA       12048534
 //
 
-//#define PROTECT
+#define PROTECT
 
 /*
  * Includes Necessarios
@@ -150,9 +150,12 @@ int main(int argc, char *argv[]) {
      */
     if (rtn == 0) {
         // Eu sou um filho
-        printf("Filho %i comecou ...\n", count);
+        fprintf(stdout, "Filho %i comecou ...\n", count);
+        fflush(stdout);
         printChars();
     } else {
+        // Espera-se um determinado tempo em que os filhos irão imprimir os dados na tela
+        // Após este tempo, mata-se os filhos, encerra-se o semáforo e memória compartilhada, e o programa termina.
         usleep(15000);
     
         // Matando os filhos
@@ -200,14 +203,11 @@ void printChars() {
     int tmp_index;
     int i;
     
-    /*
-     * Este tempo permite que todos os filhos sejam iniciados
-     */
-    usleep(200);
+    // Este tempo permite que todos os filhos sejam iniciados
+    usleep(1000);
     
-    /*
-     * Entrando no loop principal
-     */
+    // Loop que fará com que os filhos imprimam o vetor de
+    // caracteres até o timer de 15000micro seg do pai se esgotar
     while(1) {
         
         /*
@@ -249,9 +249,12 @@ void printChars() {
          * ultrapassar os limites do vetor, o comando if garante isso
          */
         for (i = 0; i < number; ++i) {
-            if (!(tmp_index + i > sizeof(g_letters_and_numbers))) {
+            if (!(tmp_index + i >= sizeof(g_letters_and_numbers))) {
                 fprintf(stdout,"%c", g_letters_and_numbers[tmp_index + i]);
-                usleep(1);
+                fflush(stdout);
+                usleep(1); //Para que não imprima taaantos dados assim...
+            } else {
+                break;
             }
         }
         
@@ -266,8 +269,9 @@ void printChars() {
          * caractere return para iniciar a linha seguinte e coloca
          * zero no indice
          */
-        if (tmp_index + i > sizeof(g_letters_and_numbers)) {
+        if (tmp_index + i >= sizeof(g_letters_and_numbers)) {
             fprintf(stdout, "\n");
+            fflush(stdout);
             *g_shm_addr = 0;
         }
         
