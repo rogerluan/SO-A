@@ -169,7 +169,7 @@ int main(int argc, char *argv[]) {
             fprintf(stderr, "Impossivel remover o segmento de memoria compartilhada!\n");
             exit(1);
         } else {
-            fprintf(stdout, "Segmento de memoria compartilhada removido com sucesso!\n");
+            fprintf(stdout, "\n\nSegmento de memoria compartilhada removido com sucesso!\n");
         }
         
         // Removendo o semaforo
@@ -250,9 +250,9 @@ void printChars() {
          */
         for (i = 0; i < number; ++i) {
             if (!(tmp_index + i >= sizeof(g_letters_and_numbers))) {
-                fprintf(stdout,"%c", g_letters_and_numbers[tmp_index + i]);
+                fprintf(stdout, "%c", g_letters_and_numbers[tmp_index + i]);
                 fflush(stdout);
-                usleep(1); //Para que não imprima taaantos dados assim...
+                usleep(1); // Para dar aos outros processos uma chance para executar (isso também faz com que não sejam apresentados tantos dados na tela
             } else {
                 break;
             }
