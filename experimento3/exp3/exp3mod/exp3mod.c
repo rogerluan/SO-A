@@ -170,7 +170,7 @@ void produceCharacters() {
         }
         
 #ifdef LOG_DEBUG
-        fprintf(stdout, "\n<Generated i: %d>", i);
+        fprintf(stdout, "<Generated i: %d, producer_index: %d>", i, *shared_mem_producer_index_address);
         fflush(stdout);
 #endif
         *shared_mem_producer_index_address += i;
