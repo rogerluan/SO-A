@@ -237,7 +237,7 @@ void produceCharacters() {
         fprintf(stdout, "<Generated i: %d, producer_index: %d>", i, *shared_mem_producer_index_address);
         fflush(stdout);
 #endif
-        *shared_mem_producer_index_address += i;
+        *shared_mem_producer_index_address += temp_index + i;
         if ((*shared_mem_producer_index_address % BUFFER_SIZE) >= BUFFER_SIZE-1) {
             lockSemaphore(buffer_semaphore_id);
             shared_mem_buffer_address[BUFFER_SIZE] = '\n';
@@ -276,7 +276,7 @@ void consumeCharacters() {
             }
         }
         
-        *shared_mem_consumer_index_address += i;
+        *shared_mem_consumer_index_address += temp_index + i;
         
         // If reached the end of the buffer
         if (*shared_mem_consumer_index_address >= BUFFER_SIZE-1) {
