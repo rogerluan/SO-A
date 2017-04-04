@@ -1,0 +1,1386 @@
+/********************** Resultados do Experimento3 com a diretiva PROTECTED definida: ************************/
+
+Filho consumidor 1 comecou...
+Filho produtor 2 comecou...
+Filho consumidor 3 comecou...
+Filho produtor 4 comecou...
+Filho consumidor 5 comecou...
+Filho produtor 6 comecou...
+Filho consumidor 7 comecou...
+Filho produtor 8 comecou...
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+Finalizando Produtor:	##################STUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+Finalizando Produtor:	ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+
+Finalizando Consumidor:	ABCDEFGHIJKLMNOPQRSTUVWXYZ abc##################################
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+Finalizando Produtor:	ABCDEFGHIJKLMNO################efghijklmnopqrstuvwxyz 1234567890
+ABCDEFGHIJKLM
+
+Finalizando Consumidor:	ABCDEFGHIJKLMNO#################################################
+NOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+Finalizando Produtor:	#############N#########XYZ abcdefghijklmnopqrstuvwxyz 1234567890
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklm
+
+Finalizando Consumidor:	ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklm########################
+nopqrstuvwxyz 1234567890
+
+Finalizando Produtor:	ABC#####################YZ abcdefghijklmnopqrstuvwxyz 1234567890
+ABCDEFGHI
+Conjunto de semaforos removido com sucesso!
+Conjunto de semaforos removido com sucesso!
+Conjunto de semaforos removido com sucesso!
+Segmento de memoria compartilhada removido com sucesso!
+Segmento de memoria compartilhada removido com sucesso!
+Segmento de memoria compartilhada removido com sucesso!Program ended with exit code: 0
+
+
+Filho consumidor 1 comecou...
+Filho produtor 2 comecou...
+Filho consumidor 3 comecou...
+Filho produtor 4 comecou...
+Filho consumidor 5 comecou...
+Filho produtor 6 comecou...
+Filho consumidor 7 comecou...
+Filho produtor 8 comecou...
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+Finalizando Produtor:	######################WXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+Finalizando Produtor:	ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+Finalizando Produtor:	ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+Finalizando Produtor:	ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+
+Finalizando Consumidor:	ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 12345678##
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+Finalizando Produtor:	ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghi########rstuvwxyz 1234567890
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopq
+Conjunto de semaforos removido com sucesso!
+Conjunto de semaforos removido com sucesso!
+Conjunto de semaforos removido com sucesso!
+Segmento de memoria compartilhada removido com sucesso!
+Segmento de memoria compartilhada removido com sucesso!
+Segmento de memoria compartilhada removido com sucesso!Program ended with exit code: 0
+
+
+Filho consumidor 1 comecou...
+Filho produtor 2 comecou...
+Filho consumidor 3 comecou...
+Filho produtor 4 comecou...
+Filho consumidor 5 comecou...
+Filho produtor 6 comecou...
+Filho consumidor 7 comecou...
+Filho produtor 8 comecou...
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+Finalizando Produtor:	ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+Finalizando Produtor:	ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+Finalizando Produtor:	ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 123456789
+
+Finalizando Consumidor:	ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1#########
+0
+
+Finalizando Produtor:	A###################UVWXYZ abcdefghijklmnopqrstuvwxyz 1########0
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+Finalizando Produtor:	ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 123
+
+Finalizando Consumidor:	ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnop#####################
+4567890
+
+Finalizando Produtor:	A#####GHIJKLMNOPQRSTUVWXYZ abcdefghijklmnop##############4567890
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+Finalizando Produtor:	ABCDEF###JKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+Finalizando Produtor:	ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+ABCDEF
+Conjunto de semaforos removido com sucesso!
+Conjunto de semaforos removido com sucesso!
+Conjunto de semaforos removido com sucesso!
+Segmento de memoria compartilhada removido com sucesso!
+Segmento de memoria compartilhada removido com sucesso!
+Segmento de memoria compartilhada removido com sucesso!Program ended with exit code: 0
+
+
+Filho consumidor 1 comecou...
+Filho produtor 2 comecou...
+Filho consumidor 3 comecou...
+Filho produtor 4 comecou...
+Filho consumidor 5 comecou...
+Filho produtor 6 comecou...
+Filho consumidor 7 comecou...
+Filho produtor 8 comecou...
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+Finalizando Produtor:	ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+Finalizando Produtor:	ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+Finalizando Produtor:	ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+Finalizando Produtor:	ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+
+Finalizando Consumidor:	ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefgh#############################
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+Finalizando Produtor:	ABCDEFGHIJKLMNOPQRSTUVWXY###bcdefghijklmnopqrstuvwxyz 1234567890
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+Finalizando Produtor:	ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+
+Finalizando Consumidor:	ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrs##################
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+Conjunto de semaforos removido com sucesso!
+Conjunto de semaforos removido com sucesso!
+Conjunto de semaforos removido com sucesso!
+Segmento de memoria compartilhada removido com sucesso!
+Segmento de memoria compartilhada removido com sucesso!
+Segmento de memoria compartilhada removido com sucesso!Program ended with exit code: 0
+
+
+Filho consumidor 1 comecou...
+Filho produtor 2 comecou...
+Filho consumidor 3 comecou...
+Filho produtor 4 comecou...
+Filho consumidor 5 comecou...
+Filho produtor 6 comecou...
+Filho consumidor 7 comecou...
+Filho produtor 8 comecou...
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+Finalizando Produtor:	##################STUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+ABCDEFGHIJKLMNOPQRSTU
+
+Finalizando Consumidor:	ABCDEFGHIJKLMNOPQRSTU###########################################
+VWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+Finalizando Produtor:	############MNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+Finalizando Produtor:	ABCDEFGHIJKLMNO##################ghijklmnopqrstuvwxyz 1234567890
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+Finalizando Produtor:	ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefgh###lmnopqrstuvwxyz 1234567890
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+Finalizando Produtor:	ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+Finalizando Produtor:	ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+Finalizando Produtor:	ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890
+
+Conjunto de semaforos removido com sucesso!
+Conjunto de semaforos removido com sucesso!
+Conjunto de semaforos removido com sucesso!
+Segmento de memoria compartilhada removido com sucesso!
+Segmento de memoria compartilhada removido com sucesso!
+Segmento de memoria compartilhada removido com sucesso!Program ended with exit code: 0
+
+
+
+/********************** Resultados do Experimento3 com a diretiva PROTECTED não definida: ************************/
+
+Filho consumidor 1 comecou...
+Filho produtor 2 comecou...
+Filho consumidor 3 comecou...
+Filho produtor 4 comecou...
+Filho consumidor 5 comecou...
+Filho produtor 6 comecou...
+Filho consumidor 7 comecou...
+Filho produtor 8 comecou...
+AAAABBBBCEGIDFHJEGIKLORMUPSNVQTXW cYfadZgbe chfadigkpjulqzv13 527436857496A8E0BIF
+
+Finalizando Produtor:	ABCC#JEFG#IGJKL#D#####K##UV##H##Q#a####fgLhRij#V##
+dddfeehiffjjggkkhnllotpmmuvn v161w272x383A449B5F0
+
+CFinalizando Consumidor:	A
+B
+CFinalizando Consumidor:	DKAEBFCGGDHE#F#GKHL#
+##
+#KFinalizando Consumidor:	#LA##B##C##DS#E##F##G#SH########K##L ######### #########S##################m##n# ####m##n#######t##u##v##wt#xu##v##w##xm##n2##3##4##52#63#74t#5u#6v#7w
+#x####
+
+#
+#Finalizando Produtor:	2A3B4C5SD6E7F###H##L
+#KL##H####ST#T###M## ##V####U######mNn###V#W#tuvwx##O##2Z3X4567###
+ddY eehaffibkncjloskmptlnqux114y225z336744785598BG0CLHQ
+
+Finalizando Produtor:	DA######I#RI#####T##QWRSTS##W###U aXbc##T##h#V###Y###### st#W####Z###a23#5##890
+ X bafckbldmcmrndnsvootpwz3uxv 4y18z592C6E37FDJGOEK
+
+
+
+Finalizando Consumidor:	Finalizando Consumidor:	RAA##PCC####FFGGF#L###JJKSKLQ#L##O#POQPRGQSRMTS#TT##W#RWXX##ZZ Ya Nbacbdc#dU######Z#S#####lc##l###e####V######j##d#v##v#####fW#####2#k32l3####6677#g#p####
+
+rmuqsnrvtzx25 y3671492580C9G
+
+Finalizando Produtor:	AH#DCD##0GH#JKILMEN###
+#
+#Finalizando Produtor:	#APU##C#DSE###G#H#I#J#QK#L#M#N#T###P#Q###SR#T#U####U#p#q#######u##VS######### ########Z#5####p8q9W#0#
+#Zu### ## ###X###### 0
+ZaYa bfaicgljnpmkoqnlsrowst xtu1y42v750D8F
+
+Finalizando Produtor:	IA#E#DEFGG#I#J###F#####L#TK#####G#####LM##fH#####Ml#N####r##UQ#vw#Oy##V#R###5#Y#  ##0
+ aZaac
+
+Finalizando Consumidor:	eA ##D#b#d#
+#
+IFinalizando Consumidor:	aJfAK#L#McDNO###eQ#Rg###TJUbVK#L#MfYNdZO #a#bhRc#dTekUofVg#h#s#Y#Zkllv# #ao#bp#tcrdset#fvgxwhx#wy##z#k#lq#####o5y#p#1q#r#s#t 
+#vrwxy32z 1235#5##s3##6#
+647A7B8EG8HKHOLIQSTPJUTKVQUX RVaYSdfZklgl mnhrnoistotxy265z3
+6
+Finalizando Consumidor:	7#B#4 D8#####8##LAMNOPQ59##TB##9#XYZE 0a##d#IfKghFi#
+k
+lJFinalizando Produtor:	mAnLBoG###DrEsFtKG###IQM#JxKyLzM N1ROL2P3Q4NSW TXaUYbdVecWfdkgolhpqqirrsjtw1ux246y579A60B
+
+
+7
+Finalizando Consumidor:	Finalizando Produtor:	AABBCCCDDEE8FFGG#F#IIJJKKLLMKMNNOOPPQGQRRSSTLTUUVVWWXXYHY##  MaabbccddeeIffgghNhiijjkklJlmmnnoOoppqqrr#S#######wUwxxyyT####1122V##44556677889900
+
+UUWXVYXWZXc Ydahebikoqlprsqutxvuywvz26 3714825906D
+
+Finalizando Produtor:	A#J#DK#####KJKLMN##L###L#######M####Nd######ON##mnopPqrstuvwxOyz Q1234567890
+UURVVSWWZbX caYdeZhfimoqnproqtsr
+
+Finalizando Consumidor:	#u##Dt###x#v#JKLMNuOPQRSy#UVWX Y5Z abzcdef#hi1###mn6opqr stuv#8xyz7 1##B#596789#
+DE0EFF
+
+Finalizando Produtor:	#GB##GEFG##JKLHMNOPQRLS#IUVWXYZM aQbcdef#hi#RN##mnopqSrstOuv#xyz 1T###X567890U
+XVYYaZZbcfhgdiehjfikljlmqvnwxoyx13y243z56 670E8
+
+FFinalizando Produtor:	#B##9EGFGHI###0#####I###########J####
+#
+##Finalizando Produtor:	###B#####E#F#GpHqIKrJsKt#u#v#w#x#y#z#L# #1#2#3#4#5#6#7#M8#9#0#
+#N#######S#####O###T#uvwPxyz 12U34567V890
+VWYZX Y aZaebbfccgjokhlpiqrjuszv1 w21
+
+xFinalizando Consumidor:	3#B#4#EF#HI7JKyLM5NO8P##STUVCWX6YZ 9abc#efgDh7ijkl#0#opEq8rs#u
+v
+wFinalizando Produtor:	x#yBIzCD E1F2#3#4I5#6K7L8M9N0O
+P##STUVWXYNZ abc#efghOijkl##opqrOs#uvwPxyzP 1234Q567R890
+RRSSWTTXZUY Vbacfbhgchimjpnqsuovvpwwzx 3617728809C
+G
+Finalizando Produtor:	#BCDDEFGHH######OEP###I##V###F#J########hK#G###########OL###xy####P34M567890
+OQNPRUQYVRZWS Xcagdjklelm
+
+Finalizando Consumidor:	fm#BCnDEFGptHIJKoLMuNuOPQRpvS#UvVWXYZz wa#cdef2gh#j klmnxo3p##1#tuvwyxyz 14234##2####
+65708D
+
+Finalizando Produtor:	E#9BCDE##HIJFKLMNIOPQRSL#UVWXYJZ a#cMdeKfgh#jklNmOnop###tuRvwPxySz 12Q34567890
+RTRSUVTVWUX dagebhfijcmklndpoquprvswqxty1692073
+
+Finalizando Produtor:	#B8CDEF##IJK4LM9NOPQRSTU5V#0#############F#k#####
+#
+#Finalizando Produtor:	###BuCvDwExFy#z# I1J2KL3L4M5N6O7MP8Q9R0S
+TMUNV####N###O######O##kR#####P###S#####Q###1T234567U8X90
+XYVZ WaaXbbechiljimjkn
+
+Finalizando Consumidor:	#BlCkDEF##oIJKLMsNOPwQxRSTUVtWXyYZ azbc#e##uhijklzmno###stu# wxyz #22#### ####1
+3164057
+
+6Finalizando Produtor:	###8#EF##IJK97LMNOPQRSTEUVWJXYZ abcK#eK##hijkMlmLno###sNtu#wxMyz 12345O67890
+ONPPTQQURRVSSWaTbbgchcdidejekfpulvvmwxnyxozy4 z516927308
+F
+Finalizando Produtor:	####EF##K##GKLMNOPLQRSTH#########cd#########M###I##s##vN###J# 12345O67890
+LQPRSTYUTZ U aVcbWdcejnfk
+o
+Finalizando Consumidor:	####EFGHIJKLMNOPQRSTUVW#YZ abcdef#p#l#jkl#npop##qs##s##v####r#w#####w#8x9#
+syxz3y 47185209
+E
+Finalizando Produtor:	####E###0#F##LMNOPQRSTUVW#GYZ abc
+d
+eFinalizando Produtor:	f#######jEkLFlG##n#o#p#qLrMs#M#O#PvQwRxSyTzU V1W2#3Y4Z5 #a7b8c90
+LdefN###jkl#nopqrMs##vwxyOz 12345#N7890P
+POQQURRVSSWYbXdcgdehefifkjopkpqtqurrvsswx2x3y849z50 
+
+BFinalizando Produtor:	#B1##EFGC####LMNIOPQRDS##JE#WX##K###F#d############L######wxOyz 12R345#78P90
+RSQSTTUUUVVWVZXd haeikfjnlokpml
+
+Finalizando Consumidor:	#qBCDEnFsG#IwJKLMNO PQRtxSTUVWX#u1Z a##dyef#3hi2jklmznopq#s4tu#wxyz 13234#### ##
+450EF
+
+Finalizando Produtor:	#BF#G###GG#IJKHLMNOPQRJSTUVWX#ZI Ka##def#LhijklPmnopQq#Rstu#wxRyzS 12345S####0T
+RTUSVXVYZdZ e afbagbhkprsqstrtvuwuvxvwy27z88 991A0BF
+
+Finalizando Produtor:	KLAB###F####KLMLM##########NM###########O#####mn#pNqrstuvwxyz 12##P5#7890O
+LQVMWRNSXOYTPZUa fbkgclhnqmornspotqvwurx 5
+
+Finalizando Consumidor:	A1B8###6F####2K9LM7N
+OP3QRS0T8UV
+WXBYZ 
+a
+bFinalizando Produtor:	IcA#B#CCf#g#JhF####kIlJmKnLMoNOPQRSTUVWXYZ abc##fgh##klmpnqorpsqtrusvtwuxv#w#x #1#2 31#2536#75869708
+90
+IDKJLOKPQLFinalizando Consumidor:	ABCQD#F#U#IRRVSJKSWTLTXU####Yc#hdZie jkanlobm#psnqtorux25#y3679#780#89#
+#
+#Finalizando Produtor:	#9A#B#C#0D###F##FIJK
+L
+#Finalizando Produtor:	G#A#B##C#D##L#F#G###I#J#K#L#MM##############################mnopq#r#s#t#u#v#w#x#ym#n o1p2q3r#s5t6u7N8v9w0x
+yL# 1O23#567M890
+PPRQQ###T#####V#####S##stuvwxyU# W12T3#567V890
+XUWYVXZ jeakfblgcmhnrvoswptxyqu
+
+zFinalizando Consumidor:	A###73####I JK8###O4PQ1RSTU9V5WXYZ 0aCbc#efgh#jFklmnopqrstuvwxyz 12345#7890
+
+
+Finalizando Produtor:	A#C##F##IJK######RDSGTUVWXYZI aKbc#efJgLh#jklmnMopqrOstuvwxNyzP 12345Q#789S0
+SRTTSUUTVVWUWXaYfbZgc dhkiolspmtunwv x1w2yx3z6047
+
+Finalizando Produtor:	5A#8C#####IJKLMNEOPQ9RSTUVWXYZF abcIdefgGhi#klmJnop#H#stuvwxyz 1234K567890
+IMPJNQKORUXVSYZaT bUaVcbfcdkeglphmqsrvytwzux yv126073
+
+Finalizando Produtor:	A#C#EF8G4HIJ9K5##NO#QRSTU0V#6### abcdefg
+h
+#Finalizando Produtor:	#K####m###
+E#F#G#H#I#J#K###NO#QRvS#T#U##V####
+4Finalizando Consumidor:	5#6#7#8#90E
+FKGHIJK#####N#O #aQbRcSTdUV##L## eaLfbgchd#e#M##mf###Mg#h########vmN#############N###4v5#6#7#8#O#9#0#
+#S4S56789T0P
+TUWXUYVYZ dfeaghbhicijmosnputvqwrwx 3y14687598609
+
+Finalizando Produtor:	#####FGHI#######Q######X###############7m#######0uv#### 1#F3456
+7
+8Finalizando Produtor:	9#0#
+#K##FGGHI#K###L##QH######XM####N#####N###O###m######OP##########U3#
+5
+6Finalizando Consumidor:	Q7#######
+#UFVGHIR#KLMN
+O
+PFinalizando Consumidor:	VQ#R#####XU#VF#GXHW#I###K#LW#M#N#O#PYQ#R####a#U#V#W#XmdY#####a##Z###d################m#########3###5#67###
+###b###3#e567# ##
+fhagilhjmornstotupuvvywz26 379408
+
+Finalizando Produtor:	#5####F###9########R########6#####ef#0#F#j#lmn
+op
+#Finalizando Produtor:	r#s#t#u#v#wF#GGy#z# ###2#3#4H5#6#7#8#9R0#
+##NN#######O##O#ef##P########P##stQuv##yz S#2345R67890
+TSVUTWYUXZad begifjhlk
+
+Finalizando Consumidor:	i####m#o#GH###j##NOpPnQRSTUVkWXqYZ ab#deofghijklmnopq##tuv###############
+twpux1vy24735086
+
+9Finalizando Produtor:	###DD######0#####E######VW##
+#
+#Finalizando Produtor:	###DE###b###d#e#f#ghijklm#n#o#p#q#####t#u#vVwWx#y#####1#2b3#4d5e6f7g8h9i0j
+kHlmnopFq##tuvwxyI##12K3456789J0
+KNLLOMMPNQQURYVSZWa dbgechfjigkjnlromspv
+t
+Finalizando Consumidor:	###wqDEF#uHIJxKzLMNO3PQRS6 #UV4W#YZ71 abcdef5gh8ijklm2nopqrstu6v9wx#z0 1D234567H890
+
+
+Finalizando Produtor:	###DEEIF#HIK#K###OJPQRS#UVW#YLZ KabcdMefghijkNlmnRopqrstuOvwx#zS 12345P67890
+TRQUSVZT  ecafdbgechfdilqjrkrssvttwu xv1y25
+z
+Finalizando Consumidor:	##8#6DEF #HIJK9LM7NOPQC
+R
+SFinalizando Consumidor:	T#U#0VC#D#E#8FZ# HDaIbJcKd
+eL
+fMFinalizando Produtor:	gN#hO#iPCjQDkRElSF#T##UH#VI##Jq#Kr#LsZMt NuaOvbPwcQxdRyeSzfT gU1hV2i##j##k#5lZ6# 7#a8#b9#c0qd
+resftguhviwjxkJly#z# #1#2qE#rstuvwxyz #1526#7#859607
+890
+JKFKLPNSOTTPUUWVZX WYahdieijkjklolmpsnuotvyuwz14 257698B0DC
+
+Finalizando Produtor:	#EHBCDEF#H#F#####I##QRKS##J#W###L####N####MhO#######RS#qr###Sv###T######U#6
+#
+#Finalizando Consumidor:	U####
+#U#V#F#HIJKVLMNVO#QRSWTUVW########W###hW########Xqr###v#####b#####6e###f#
+cfgdilhjmiknjorktsyzzt  u12v236347ADB8EC9FHLGMIHNJROUSVPWTYXUZYc gdiahjbikcjlquvrvwxzx  1y21z356A47B5C86D9IE0JL
+
+KFinalizando Produtor:	ABCDEM##HIJSKLM##N###S##VWTX#Z####O##U#gh#####P####V#######X#z 12a3456b7890
+bbcccdfije
+k
+Finalizando Consumidor:	ABkCDE##flHIJKLmMNOmP##STUgVW
+X
+#nZFinalizando Consumidor:	#AaBbpCcDdEe#f#tgHhIiJoKjLkMlNumOnPo#p##S#Tu#UtVuW#Xp##Z##v########a6b7c8d#e#f
+ghijvklmnopqq##wtuvw##zz####44#6758##
+676787889BFG0GHH
+
+Finalizando Produtor:	AKBCND#FGHO#P#K##NOP#P##TU#Q###Z#abcQdefghijkRlmnopqR##tuvw#S#z###W#4567890T
+XWYUXYZbcfdcgehdjiekmlfnqvorwysxzt1 u2163
+2
+Finalizando Consumidor:	7A0BCD#DF8GH##K
+#
+#Finalizando Produtor:	NAOBPCQDR#SFTGUH##W#XKY#Z##NOPQRSTU#WXYZ##bc#dbecfdgehfigjhkiljmknlom#nqor#sqtrusvtwuxv#Ewzx #1z2 3G#1#2637#
+8#
+6#Finalizando Consumidor:	70A8
+B#GC0D
+EFGHF#H#K#H#NOPJQIRSTUML#WXYPZ##NbcdMefgQhiOjklmnNo#RqSrOstuvwxSP#Tz 123#W#678#U0
+adXbfecgfdghehikpjlqvmrwnxxoyy2zz3504
+6
+Finalizando Produtor:	ABC5D##7########6##8#######F###J###K######K#####L#M##qr##uM#N########N4###8#O#
+
+QQ
+Finalizando Consumidor:	ABC##F###PJKLMNOPQ##R######R########Q###S####S###qrX##u#TT####Y#U###4###U8##
+Z e afhagimhjnipoqtpruqsvw 4x1572683B04
+
+CFinalizando Produtor:	ABC#H###HD#####I#######LU##X##J####M#####Kij####N########wL#####2345678#0
+LOPMTUUNVVWOYX
+Z
+Finalizando Consumidor:	ABC#P#a##HcIJKLbMhNOP#d#j#TUVWXiYZ#abcd###hij######e###k###w#j#########78f##
+lkgmqvnrwxoxypzy14825930BE
+
+Finalizando Produtor:	ABCC#E##F#####D#######H####K#####bc###IghijLklmnopJqrM###vwxNyKz#12345O#78L90
+NPSOVTPWUYXVZYb fcahglihmjin
+
+Finalizando Consumidor:	ABCDEF#HIJKLMNOP##oSTUsVWXYZo abpc##fghitj#lmnwop##yst#vwxuy####x####z####
+2y 3516478589690CH
+
+Finalizando Produtor:	DABCIDEF#HI#M##MO#OP#N#####P###Z##Obc##fQghij#lRmnopU##stuvwxSyz 1V234567T890
+WUUXVYWbZcXdf aegbfhknslutovwxpwyqz2r3
+
+4Finalizando Consumidor:	ABC9DEF#H4I5##0#MNOPQRSTU5V
+W
+X6Finalizando Produtor:	YAZB CaDbEc6#d#e#f7Ig#h####MkNl7O#PnQ8oRpSqTrUsVtFWuXvYKwZx yazb#c#dG2e3fL4g5h6#7#8kH#l0#
+MnopqrstuvIwxyzN##23456J78#0O
+KPLUQMVWZa XbaYcbdgekhmolnpmoqnprsowt1xu2y46975086
+D
+Finalizando Produtor:	AB7CDEFEGHIJ8KLM#OPQ#F##J###### aGbcde####K#klmnHo####L#u##xyI#####M####8O#0
+OSPPTQQURRVSWWafXbgYihjZik jlqumvvxwwyxxzy y15026
+
+Finalizando Produtor:	##3C7D###HI#KLMD#OP4QRS#UVWXYEZ a5b#####hFij
+k
+lFinalizando Consumidor:	mnI####CqDG#E#F#G#HJI#J#K#LyM#H##1O2PK3Q4R5S###UN#V#W#XQ
+YQZ aRbO###S##hijkTlmnU##Pq##U#V####y##Q123WY45####b#
+XZYc ehdfiljekfmlnqmorvszwt xu1y324z358C6DE7FEGJFKHGLHMISNXTYYZUZ V
+
+ Finalizando Consumidor:	#a####dFGHhI##LbMeN####SiTUkV#XfYZ jalb#denf#hpijskl#noopqq#stt###p#r####u###v##s####yw
+2z4635784095
+
+Finalizando Produtor:	#0####6FGH
+I#
+#Finalizando Produtor:	###
+Conjunto de semaforos removido com sucesso!
+Conjunto de semaforos removido com sucesso!
+Segmento de memoria compartilhada removido com sucesso!
+Segmento de memoria compartilhada removido com sucesso!
+Segmento de memoria compartilhada removido com sucesso!Program ended with exit code: 0
+
+
+
+Filho consumidor 1 comecou...
+Filho produtor 2 comecou...
+Filho consumidor 3 comecou...
+Filho produtor 4 comecou...
+Filho consumidor 5 comecou...
+Filho produtor 6 comecou...
+Filho consumidor 7 comecou...
+Filho produtor 8 comecou...
+ABCDEAFGBHCIDJEKPLQMRNSWWWXTXXY YYaZZZb   acerjnfskotglpuwzqxv r1w382B943CD54DE6HELFIFMOQVXPRWQYSbZZTc  gdkhaelnifmo
+
+Finalizando Consumidor:	###DEF#HI#KLMNgOPQRST#VWjXYZ abcdenfghipjkslmnop#k#st######o#####v####9w#
+61x77298ACD9BDE0CEF
+
+Finalizando Produtor:	ABCDEF######MNO#Q#ST#VWXYZ abcdefghijklKmnop##st#Nvwx###12###G6789L0
+ONHMOPTWPZU bceafdfbghechifdijgmjksrxltyy3z5780A8B
+
+Finalizando Produtor:	ABBCDEFEGH#C#KLMCNOP###TFU#W#Y##DabcdD#fg####G####Ep#r#######z#123#567890
+EEHFFJOIGKPTHVXYIYWZdfZ eg ahhl
+
+bFinalizando Consumidor:	A##iDEFGHImJKLMNOiP###TUVWXYZ abcdefghi##lm##p#r#########1c####n#p####
+juqovzrp12sq23tr438C45DEI6JEJ7KFLQLGMRMUNWNVOXaWPYbXfZhiYmijrjnktskltux1uvyv2w38x349D4E5F5FG6KGH7LHIMPITUNZUVO
+
+Finalizando Consumidor:	###D EFGHIWJVKLMNOPQR#TUVWXYZ ab###fghijdkl#######a#uvwXx#z###W####e####
+bijXcjkotkluplmvqmnw r271s832B943C05D4
+
+Finalizando Produtor:	#BCD#LF#HIJ#L#########VW######cdefghijklmnEopqrQstuvwx#z 12M345#F7890R
+RGTUSVVHXWWbdYXcefYdhgmnehnoiforpwpszx1q3 494150DAFEB
+
+Finalizando Produtor:	ABGCDEFGHIFJ#LM###QRSTUVWXY###bcdefghi###mnopqrs##vwxC###J1#####7G###
+JDKOK
+
+SFinalizando Consumidor:	##CDEFGHIJKLM#O#QRSTUVWXY###bcdefghi###mnopqrs##vwx###1#####7###
+LPTUMWQVZ RW aSXabgkncholppirsqvwt wxu2417532894309C
+G
+Finalizando Produtor:	4##C###DGHH###LL##OP#EI#####W##ZM###O###J##h#N###P#n####S#tuVvwx##Q 12345W#T7890
+VXRUWVaXYbWdZfkenlgfohmgpqiuxr
+
+1Finalizando Consumidor:	##vy###23###IJ#zLM#wO3PQ4RSTUVW xXYZ#a5b6#defg0hiy#klAmnDo
+p
+qFinalizando Produtor:	rA####uDF#vFw#x#yIKzJ K1L2ME3#4#5#6####GS#T0U
+VWLXYZ#Fab#dMefghMi#kPlmnopqNr#S#uvwxQyOz 12T3456#R##0PU
+USVVYbWWZcXegimfhnjgiokpsvlqwt r1321s4527A6D8BE79GH8KIHLOQIMPRJNSST WTUaXdgib
+e
+hFinalizando Consumidor:	A###jm#FGHIJoKLqMNkOPQRrSTUVWXprYZ ab#tudefghwijklqmu#opqrv#txuvwzx#1z#31#3 #y######2
+45853964600DH
+
+Finalizando Produtor:	
+A
+#E#Finalizando Produtor:	DAE##I##HDIEJ#K#LHI#FJ#K#L##N#N#########V#WG#XV#W#XO####b####d#eHdfegfhPgihjikjkllmm##SooppqqVrr##ttuuvvwwxxTyyzz  W112233445566#U#889900
+X
+XXY YYabZdbce hdflnorsmostvxytuyzzuv 4 w185BD9FCE0GDF
+
+Finalizando Consumidor:	ABCDEFGHIJKL#NOP##STU
+V
+WFinalizando Produtor:	XHYAZB CaDbEEcFdGeGHfI#JhK#L##kLNlOmPnF#o##S#PTrUsVtWuXvYwMZ# #azbU c1d#Qe#f4#5h#####Wk#l0mV
+no##rsRtXuvwW##z S1Y##45##X##0ZT
+WY eXjfakYgblrocmspdntqwo2z3x345y678A7B9B8C0C9D
+
+HFinalizando Produtor:	ABCD0EFE#HII#########STU##
+#
+#Finalizando Produtor:	##a##A#BC#D#E#F###HjIk##############R##tRuSvTSwUx#y#z# #1#2#3a4#S5#6#7T#8#9#0#
+#Tjk#T#U#######U#v##U#zV ###456VV7W890
+TWYbUXZcd ideajfebklfq
+
+Finalizando Consumidor:	m#####lF#HI###r#####RSTUVvWXYZ abcndef##ijklmn#m#qr#x##v#x#z ####w#### ##
+5yx16z7y9 80zC9
+
+Finalizando Produtor:	JK##C##F#H0IKJKLL####M#R
+#
+#Finalizando Produtor:	###M##C#####F #aHbIcJdKeLfNM#N##i#j#kNRl#m#n#####q#r####O##v#wbxOyczd e1f#####i5j6k7lP8m9n0#
+#Vqr#V##vwxZyz  1#W##567a890
+ccabddbecfecdgfdehjotwkpuyx2 z4136524760C87
+
+DFinalizando Produtor:	##C9D#F#H8IJKLMNOPE#R###VW##Z Gabcdefgh#jk#L##op####O######H #2#####M##0
+OPIN
+
+Finalizando Consumidor:	P####Q##GHIJJKLMNOOPQR##S#VW#R#KZ WabcdefSgTh#jkX###oap####TU####c#b# #2###U###V#d#
+chjWmisnnjotokpupzvz37 4 89A1C0B2D
+
+Finalizando Produtor:	ABCD###HIJ#####P#######X#Z######fghCijk#m3nop#G#stuv###z J1234O##P7890
+PPQKQQSRRTVSYUWaZdXb eYcfhadkiblemtonyuzozv2  531860927
+
+Finalizando Produtor:	0###3D##GHIJ8K
+
+Finalizando Produtor:	#I#######O#P
+GQ
+HRFinalizando Consumidor:	IS#JT#KU##V#W#XOYPZQ RaSbTc#dU#Ve#WfGXgHYhIZiJ #Kak#bl#cm#dnOeoPfpQg#Rh#Si#T#tUkuVlvWm#Xn#YoyZpz # a#1#2t3u#v5#6#7y8z# #
+Ib1c2d3e#5678##f
+gIhi#klMmnop##J#tuvJ#J#yz 1O2N3#5K6Q78##
+RTRWXUXYSVZadghebhijclkjdmlknpslvqt w2u1x368A47BBC5EGDH6IKIJ7LJPKKMQLNLRMTYafUZbghjlcmnornstuotuvwpy xqz15y2 6z3179C4F0DKG
+
+Finalizando Produtor:	OH##CDELFGH#P#KL##OPS##S######MZ#abQcdefgh#jT#lmnopqrNstuvRwxUyz 12O345V67S#90
+V WTaafXbbgchcYdimZejnrkwoszxp tyq1u350v4
+
+Finalizando Produtor:	##CDFE6FGH##KL5MNOPGQR7STUVIWHXYZ 
+a
+Finalizando Consumidor:	b#8c#d#e#fI#gFhGijk#JmnopqHIJKLMrNsOtPQRSTUuVvWwXxYyZz  a1b#c3d4e5f6g7h8i99#j
+kJ#NmnopqSrKstuvwxyz 1#3K456O7U89#
+TLPUVQMVWRNXWZdeYjkfpklgqlmhrminstyotu4z9v5 0w61
+
+Finalizando Produtor:	#x###7#2FGHIJKLMFNO8PQR#3######G###L#Q####g###MH######R##N#t#vw#I####23456S7890
+OQJTURUKVSZdWTeeXUf
+
+Finalizando Consumidor:	f####n#iFGHIJgKLMNogOPQRSTUVjWX#Z#h###spdefghuiij#t##nopqq#stuvvw##zz##u###r######
+ wvs1x38B2CD43EFDHMGEINHOFOIPGPSQXabcbRYdchZedij nkjaolkpumlqyv3rwzs4x 58B1DECF2FGDKMOEPNQPTVXQUYYa
+
+
+Finalizando Consumidor:	c#
+BCFinalizando Consumidor:	DZ#EBFCGDHZEIF#GKdHI#K#dM#NOPMQfNROSPTQU RVS#TXeUYVZ# XeaYbZc gdaebfcgjdheijffklm###fqrghijksltm###x#### #1q2r#s#t#######x####
+h 12###m#k####tq
+nluvomwvynx 161920B0D
+
+Finalizando Produtor:	#CBCDEEF
+GH
+#Finalizando Produtor:	#D##B#C#D#E#FPG#H####V#X#Y#Z# ####PI#####aVb#cXdYeZf gahbicjdkelfmgnhoi#jqkrlsmtnuov#wqxrys#t u1v2w#x#y##6 #1#29#0#
+#I6##90
+IEJJKOQKPLTSVQUTWRVUXSYW eghlmnmionnjpposqtxtu1uy32z6437 85419BFK0LLG
+
+Finalizando Produtor:	#MBCDEFMGHIJHKLM#OPQRSTUVNWXY# abNc#e#ghIij#Q##no#qOrstu####J###
+2
+3RFinalizando Consumidor:	4###6####V##F#G
+HIVJKL MNSOWPQRSWTUcaVWXY# Xeafbc#iebfghijj#jg#c#nko#qrnlstu##d##l###o2o34#6##t##
+mvwuw vx216y527z6388BFG9CHGLDIHMEJINFKJOQUYcdVZedWf egXafhYbgimrjwx xsy1ytz24u7538v04
+
+Finalizando Produtor:	9#FB#DEJFGH
+0I
+JFinalizando Consumidor:	K#LGMBN#O##KEQF#G#H#IUVJ
+WK
+XLFinalizando Produtor:	YM#ZNB #Oa#b#cFdGeHfIgJhKij##m#L#M#N#O#rQ####UQV#W#X#YUZV WaXbYcZd eafbgchdiejf#g#hmi#j##s##tm#u#rv#sw#tx#uyrvzsw tx1uy2vz3w 4x15y2#z3# 48519#20#3
+48M59#0#
+8M90H
+LNQRUROSVWPTWXQUXYbfcjZgdk lolampsmuvnqtwzru237v348w95A0FIB
+
+Finalizando Produtor:	ALBM###FGHOI##LMNNOM###P##U###O###N#b#####Q#R###l#U######YV##vwxZy# W1Z2345# 7890
+aaXabbYdfcjkdgkolhlpmirqnvsy2twz3ux 4591B06C
+
+HFinalizando Produtor:	A7BC####HI###DI####Q###8#VWXYZ EabcJd#fghijLklmnopPqrstKuvwxyz 1M234567890
+PLQQNWUYOXVZPW  eaXhbfliogmqphrsnwy1tzx42y 5586169ECF7FDGJGELKORLMPSNUTQXVRU
+Y
+Finalizando Consumidor:	WA###e#a##HIZXJK#f#NOPb QRSTiUVWgXYZ mabc#ecfgjhij#lmnohp#r##n##w##dz 1######k##i#o
+elrpwmsqxt1y62uz7308D
+4
+Finalizando Produtor:	A##D9EE##HIJIK####M#####FUVJ#X#######NefghQijklmnopqrsKtu#OwxyzR 12U34#67890
+PVVWWQWXXZRY aYfaZbigcnhjqoikrpljsquzt vr31w482x59By
+0
+Finalizando Consumidor:	A6B#DCEF#HHIJK
+#
+MFinalizando Produtor:	NAOBPCQDRE#F##UHVIWJXKY#ZM NaObPcQ#R##f#gUhVWiX#7YkZl #anbDocp#q#rfsIgthuiv#wkxlPy#zn o1pR2q3r4s5t6u7Jv#w#Q0xy
+z S123456K7##0
+SRTTSXUUabdehicfjjdkgkelmhfmniosx1ptyq2uz37v 48w159D6I0E7J
+F
+Finalizando Produtor:	ABCDPEKF##IJK###G#P#Q######### La#cd########mT##pq######Rxyz 12X34567890
+YYSZZZTa b diajcbjkdolkruplvwmwqx
+x
+Finalizando Consumidor:	1ABCr###yG#IJKyL##2#PQRSsT###5XYZz3 abcd#0###ijklmA#oEpqrs#Huvwxy
+Jz
+#Finalizando Produtor:	1AK2B3#5#C###E#I#0#
+HIJKKL##L#PQRJST##L#XYMZ abcdO##M##ijklNm#opPqrs#Nuvwxyz#123#5##O##0
+OQTPPRUQYSVaZfWbg Xhcankdboletpmyuqnvz1ow 26x8A7FG9G80HHM
+
+Finalizando Produtor:	IABC#EFPGHINJKLMSNOPQQRSTUOVWXYZ TabcdRe########nVo###Xst##### ###23###W##Y#a#
+ 
+
+Finalizando Consumidor:	ZXA#C#EFGbHIaJKdLMNYOPQRSTUbVcWXYZZ eabcdec###d#f###j#no##g#mst##r#####k#23####u###
+nslovtxwp 1x2q2y733B84ECGJFKMKOLPRPMSQQUTRXV cdfagehjhfikilnjqtmoruwpvsxqtwyr1xuz26AC 7BDI8EK9JFLPKSQMLTNU
+
+Finalizando Consumidor:	YA#CDE cFG#IJVKLZMNOPdQRSTUV#XYZ da#cdefghijklWmnopqrfstuvwxe#######h######
+gflkhomlrpnmsquntrvsuyw37z4x8 y5916B0F2C
+
+Finalizando Produtor:	AGBC##OFDG#I####Q#OPQ#E##P#####R####cU#####Qi##lmnopqrstuvwxSyz 1234567890
+URVXZVc YWdaZXef jgmqkhnrlotis  ut11vu223833494450CH6
+D
+Finalizando Produtor:	A#CDI#7###I#E####JOPQRS#PUVWXYZ aF#cdefghijklmnKo#qrstuvwxyQ# 1234567T890
+TLURUYSVVZaT dbiacejmpfkqqtlrxruz vs1 w2t13x724B385CG9H6DI0NEJO
+
+Finalizando Produtor:	ABCDEFGHIJKL#NKFO##RTSTUV#######L###Y##h#U##lm#boZ#####
+#
+V#Finalizando Consumidor:	###c##C#D#E#F #G#H#I5J#K7LW8#9N#Od
+#d#RSaTUVWh#YZ eeabcdleif#m#fhi##olgm#ong#ps##s#yuu###qy##t####z5#7v8r9#
+u wv35x496y5D067E
+J
+Finalizando Produtor:	8###DEFL##K#JK9L###M##LR##Q####NY##M##cdRefOghi##lNSmnoWpqrstuvTwaxyz X##345U6b7890c
+cVcdgddheeeiffnjrgoskwptlxqu 4yr15z296 307
+D
+Finalizando Consumidor:	H
+##
+#8Finalizando Produtor:	D#E#F##DHE#EJKLMN#O##QHRSTUVW#XJYK#L#MabcdefgNhiOj#kQlR#SnToUpVqWrXsYt#u##a#b#cIydze f1g2h3O4i5j6k7l8##n#Fo
+pqrJsPtu###GyzK 1234Q5678H##
+LORTPYSU Zegaf hbagichbdjilqkvmr wn1sx2oty3p4z85C96HD0KIL
+E
+Finalizando Produtor:	#P#CDER#GHI#FKL##Q#PQSRS#G####R#####T#Wd######S####op#####X########U345678T90
+WYVcXZhdj eikafjlbn
+
+Finalizando Consumidor:	#k##DmEoFGHsI#KL###lPQRSpTUVWXYZ abncdef#hijklmtnop##sxt###x# # ###455###u##
+166v877B98C809D9
+
+Finalizando Produtor:	0#BHCDEFGHM####MI#
+#
+#Finalizando Produtor:	##RB#C#D#EVFSWGXHYIZ# #a#bMc##d##RS##VeWfX#YhZ abcdeif#hjikjlkmlnmonpo#p##s#tsutvu#vx##x## #1 #1##4#546576879809
+0S
+SUTTTUVUUVWVYVXWZYW chpkqilqrjmrsknstuotuvz49w0 0C1
+
+
+Finalizando Produtor:	
+#Finalizando Produtor:	BC#DDBECFD2GEHFIG#H#I##ME#####MJ##R#S#T#URVSWFTXUYZVK W#X#YcZd e###hijLk###cde##nhoi#####G##jwkx###zn o1#2###########8w9x0#
+zL M12###Q###90NM
+QRNORSOPS
+
+Finalizando Consumidor:	##TU###FGHZIJ###NOPbQVRSTfUVW XYZ #bccWdefgghihjk##knod#####m##wixl#z 12########
+nejmofknprlsqowt1x6u27y0B8z
+C
+Finalizando Produtor:	#BC#G#9FGHIJD####K##H#####L##EXY#I#####M####F#####Pnop#NrUstQu#wxyzO 12V###6789R0
+UPWXVQXYWbfZXcghYkhilspjmqtknu
+
+uFinalizando Consumidor:	#BCDEFGyHIJKlLvM1NOPQRz##6UVwWXYZ#2 7#xb3c9##fghijkl8myn#pq#Bst0uvwx9yzG 1C23##67K8
+9
+0Finalizando Produtor:	
+#HBCDD##LGH###ILMNOEPQR##UMVWXYZ##bc##fghijklJmn#pq#Qstuvwxyz 12T3##67890
+TXRUYYSVaZZdg beahcfikdnqluowrxypsyqz15z 26 137942B0FCK
+
+Finalizando Produtor:	#BCDEFGGHIJK#D####LQ#########H##b#E#####M######T#P###st#W##XxQ####2345XY678R90
+XYZSZ Yb fZggl hnmaoinbpjotqx1ruy2vs336BB4C7CF8DDG9IE0HJFI
+
+Finalizando Produtor:	K#BCDWESFGHILJKLTXM#####STMUU#WYXY######Z####d#jZ##mn opeqrstuv# xy#a#1234f#67890b
+iigcjjmrkknsllovtzpuw 3x741y8059D6
+
+Finalizando Produtor:	####EFGHIJKLEM####0#STUI#WXYZ abcdeF
+f
+gFinalizando Produtor:	#Ji#j#k#
+l#m#
+nFFinalizando Consumidor:	oG#pH##I#r#JsK#tLFuMGv#Hw#Ix#JyK#zL# MS1#T##U3##4#W5#X6SY7ZT8 9a0b
+cdMefg#ijklmnop#U#WXYZ rasbtcudvwexfygz# i1j#k3l4m5n6o7p8#G9r0s
+tKMuvwNxyz 1QL#34N567O890
+MRTOSYZP ZTca Udfaegkohlpfiqmgsnv t41wu52xv36y8BEz9C0FJD
+
+Finalizando Produtor:	#BCGKDEFGHIPJK###L#P#H####Q#WS#####Ib###R#T###j###Yn###S###U#vw##Z#T###3V#5### #0
+fcfiggd
+
+Finalizando Consumidor:	###DjEFGlHIhJKL##e#PQRSTUVkW#YZ m#bcdoefighijnkllmpnopt###wto#vw#u#q####3#x5##p##r#
+vy41wz258BD69EC7F0DJ
+G
+Finalizando Produtor:	#BCEDKEFHGH#JK#Q##L##QR#TRT####Y# M#bcdefghijUklmnoSpqr#tXuvwxyzZ#1234567b890
+Yb cZcaggihbhjkoilkpjmlkqnmrtoysu3z804B9
+
+Finalizando Produtor:	#BCDEFGH#EJKLM###QRCSTU##XYZ a0bc####F#iGjklm
+no
+pFinalizando Produtor:	q#LrBsCtDuHE#F#GxH##zJ#K#LM#M#####I##Q#R#S9T#U
+#L#NXYZ abOc#####ijklmnopRqrstu##x#z##M####P#####
+R
+
+Finalizando Consumidor:	#NBTC#EFSGHISJKLWMNOPUQRSTUY# WXXYZ abcV###Z##aijkblmnWop qrdstuh##cx#z#a###e#i##d###f#l
+jemgkpntqloruyps z5t1 601B7
+
+Finalizando Produtor:	#BGCC##FG8H##H####D##K##M####E#XL##N#######O####SU#lm#opqrstPu##Txyz V1###5678#W0
+WUWXXZXYaeb Zgfakmhlbniouqpjvrw swxt1x
+
+yFinalizando Consumidor:	#BCDEF2GH##KLMN6OP##STUzyVWXYZ ab7##e3fgh0ijklmEn
+o
+pFinalizando Consumidor:	q8#rBsCtDuEvFwGGxHy#z# K1
+L2
+M3Finalizando Produtor:	N##5OB6PC#7D#8ES#FT0GU
+HV#W#XKYFLZM NaObP####eSfTgUVWXYZh iajbkl#mnopqrs#teufvgwhxiyjzk 1lm2n3o#p5K6q7r8s#t0u
+HvwxyzG 1L2I3#56H78M#J0
+KINOLXPSMYQTNZ dUgaehVbfiWcjgnskohtpluxmqyv1rzw27 3B8C149DG5J0HK6
+
+IFinalizando Produtor:	P#BCUDE#XGHYIJK#MNV#YP##Z##UVWX YWZ ### #####a###X##a###q###b####Y#######56####
+eec
+j
+Finalizando Consumidor:	#Bf
+
+Finalizando Consumidor:	k#BCDdE#GHCIJK#DMEN##GPH#I#J#K##UMVNW#XPY#Z# #a#bUcVdWekXfY#Z# #ajgbkc#d#e#f#g##q##j#k###############56######q
+##l####o#####qt###56##m##
+urunvswzow  x511y682C73D8GE9HMFINGJTOUKPVLQW cXdafebgichjdlnsmotupwqvxryw41x526y37B84DC5EDI
+
+Finalizando Consumidor:	F#BCDEFEGHIJJKLMNOPQ##GTUVFWX## abcdefgh#j#lm##pqr####wxy##12345#####
+KHNQVORWPSXYTYUZZc hdaiebjfmptqnurvoswptx 51y670A7
+
+Finalizando Produtor:	ABCDEF######B##OPQ##T8U######aC#####F#########I####G#u#####J#12K3#567M8#0
+NNNOOOPPPQUQRVY 
+
+WFinalizando Consumidor:	A##Z##a###cIJK#M N##QbRd#TUVWf#YZ abcd#f#h####h##c####g##u###i#####3l#####n##
+mopnrqusvrtwusxtyv3z84 951026
+
+Finalizando Produtor:	A#JE##E####J##MKN#F######L###G###abcd#M#######H###N#I#rstu#O####S#12#45P6#890T
+QSURTVZaU bdVceW
+
+dFinalizando Consumidor:	A##ki##el#j#HIJpKm##NOPQrRSTUVW#q#Z anbcde#s##ijklmrn#pqorstut######s####x###8y##
+ytzz3  14175B86C79DG0EH
+
+Finalizando Produtor:	AFBCDEFGHIJK##############Z############lmnopqrstMu##xyz 1#RN3456789S0O
+RTPSUQTVYUWZVX cfkdglmhmnpsqotrupvvqwz4x5 y618A29BEC0FI
+
+Finalizando Produtor:	ABGJC#EFG#IJ##HK######ST######L####I#######kPlmnopJqrstuvwQxyz 1U2#R456#890
+VUWSXXaYYbZe fcagdjheknfpoquprv
+
+qFinalizando Consumidor:	#BC#Ew#GHIJKL#z##PQRSTU3VWXYZx abcd efgyh#4jk##n6o1pq5rst7uvw2x6yz 1234805678D#0
+
+9
+Finalizando Produtor:	#BCDE#E#########PQRSITUVWXYZ abcdefFgh#jk##nJopqrLstuvwKxyz M123L4567890
+LPNMQORNTSOXUaYVbZcWdgeXhflimgjrnvoswptxquyrvz 50A6
+
+
+
+Finalizando Produtor:	Finalizando Consumidor:	AB#DEF##IJKLMNOPQRSTUVWXYZ#abc##fgAhBi#jD#ElFm#n#oIpJqKrLsDtMuNvOwBPxQRySzT UV#WEX#Y#Z#C#5ab6c####F#f0g
+hGGij#lmnopHqGrstHuvwxIyz H####5I6###0J
+OJKPKQLURMVYbWZcX deehfligmojqpkrqusrvx1yw2zx384495BD6CE7FFJGM
+
+Finalizando Consumidor:	ABKCDEFHGHINJKLMNOPQR#####X#L##abPcdOefg##jSQk##V####rT####R####W 12U##Y###X###
+VZYb fgaghlmhmnpnsqturvsuwyvzx34890A9
+
+Finalizando Produtor:	ABC0CDDEF
+#
+#Finalizando Produtor:	#A#B#C#D#E#FO#P#Q###S########O#P#Q###S############g#h###########n##g#h#H####t#u#v#wnx#yI#z# #1#2#3#4v#w#J##8y9z0 
+1H234K###890
+HILIJMNNKQOUPRVXZW  c
+
+aFinalizando Consumidor:	Aa##DEFd#eH#JKLhMNOjPQfRS#UkVWX#Zk a#cgdefghl#jkl#ln######h###m####1#p######i##
+nqvorwpxxqy 5z16 72183C94D0HE
+
+NFinalizando Produtor:	A#ICDEF#HI##O##NOJ##R####W#P###K####ef###Q##L#########R#vS##yz 123X4567T890
+XYUZ Ya Zba ceaifnog
+
+oFinalizando Consumidor:	A#p##s###HpIJKqL#NOPQRSTU#WXtYZ abc#vefgwu#i#r###xnopqvrstsuvwxzyz##y######3###
+484905A
+
+Finalizando Produtor:	6A####B##HIJK#7#####C####G###YZ abc#efDg#i####noHpqrstuvKwxyz###M34567890
+LMNNMONOPOPQRQWSacXbedgfehgfihgjilmkqstyutz 2u13v245w56067
+F
+Finalizando Produtor:	##8###F###G#K##9#O######H#L#####aNbcM#efghijOkPlm#opq#sQtPuvw##z 1RS23456789S0
+STWTXUY ZV aWchbdicjenkofplgqmrvzws 1t
+
+Finalizando Consumidor:	#####FGH2##KLMN3OPQR7STUVWXYZ 4abc3defghijk5lmn8opqrst4uvw##z 12634569789#A
+E0B
+
+FFinalizando Produtor:	AB#K#EFM#H##KLLM#####N#TMOUVW#YNZ abcPdefghijklmnoQpRqrstVuvwS##z 123XW4567890Y
+YXZZ Y aZafjbgklhmloqpmrsnutv2 w31462570
+
+Finalizando Consumidor:	6#8###EF
+#
+HFinalizando Produtor:	##C##KCL#MENFO#PHQ#R#S#K#VWXYZL MaNbO#P#Q#fgh#jklmRnSo#p#qVrWsXtYuZv wa#b#### #1f2g3h##5j6k7l8m9n0o
+p7qrstDuvw###8 123#56E789H0
+HIFJIGLKMQLRSUMVVNWXbWYcXdZYe hfairnsjotkvuwlxx1y2zy36z47AC8DD9EEG0FH
+
+Finalizando Produtor:	A###EF#HIJKLMN##QRGS#UVWXYZ a#I##P#f#J##jkl#Q####r####K##yz#R#####W####0
+SWXZ Y aaZbc caddhemnfoopgpqtwzx  y112z243859406C
+7
+Finalizando Produtor:	A#
+C
+##FGFinalizando Consumidor:	A#C##FG##JK#########U#G####J#K## #a##K#####H##f#g##U##j#Lk###### I#ap#q#####M#f#g####N#j#k######N2#3p4qO##6#7#8###O##
+##P###234#678S##
+SQTTWUUVXWVYWZafgkghlhiminnojopsx 1y1z233 47188C99DG0EH
+F
+Finalizando Produtor:	AL#CDEOFPGH#JKL#Q#OPQ#P##UV##R#######Q#fSgh#########T########z###T####U###0
+TVUWUabVbWccfddgejhfkiolspmtqxyurvz2w3 4x17528ACDIJEDKFELGFMOHNPTXQUY
+
+Finalizando Consumidor:	AZ###R#FGHIZJKLM NOPQRSST U##aXYZ a#d#ad##b#####le#i#####m###jf##n########k#p###o##
+sqptrqusxv1y526z738849BF0C
+
+Finalizando Produtor:	ABC##F#HIJKL########U#G########K##f####kMlmnopqLrstuv#Nxyz#1M234567890
+MOPNSOTQUPWV XaWYbXZcfjdgkmoqnprsqsvtywuzx
+v
+Finalizando Consumidor:	A ####y#G2HIJKL1MNOPQz#S3TUV2WX4YZ9 abcd#f5gD##jk#0mnop6EqrstuvwxG
+y
+zFinalizando Produtor:	 A1F#2#3D4E5F6G#H#H9I0J
+KL#####G#STUVWXYZ abcdI#fg##jk#mnHopqrstuvwxyJz 12N3456##K90
+NOSOPTVPUYWVZXWYc dZaehbkipljqsmrtnvuwovx 4y158209
+C
+Finalizando Produtor:	A#CD#FFGHIDJKL####G##S
+T
+UFinalizando Consumidor:	VAW#XCYEDZE FaHGbHcIdJe#f###h#Fi#j#k#Il#mSnToUpVWqXYKZ abcdref#hijklmnopqrstuvwxy# 12#45##89#
+stJuvwxy# 12#45LO##89#
+OQPPRQQSRTRVUZ d aeabbfchglmqnmrnosoptvzwu 1526177828A9BEH
+
+Finalizando Consumidor:	ABCD#JFFGHIJ#L##OPQIR##UVKWX## abcde#L#h###lmnop###JtNuvw###M##2Q#####O89#RS
+PSTVYWUZX adabehcfiknjloqmpruqsvytwzux 26937048
+
+Finalizando Produtor:	ABCDD######G########ES#######H##bc###J#hi#I##########K##J########4L#6K7890
+JMNKNOLPSVYTWZ
+
+Finalizando Consumidor:	A#U## Eb#GHIV#a#LMNOP##cSTUVWW#YZ abbc####dhi##g#####c####e####h####d######f###i
+ntoouppvqqwrrxsy3z8490BD
+
+Finalizando Produtor:	FAEB#DEFGGHI###F######H###G######a###e####I#####o#J#rstuvwxyJz###K34###P890
+LPQMQRNSROTSWUTX
+ 
+Finalizando Consumidor:	###eDEFGYHIJKfLMNOPfQRZSTU#WXYgZ a##h#lefghhi##ilmm#o##i##j####xnyz#jk##o######9#
+puyz v 1w21x3264375A86B9FCJKDLLPMRTQUURVVSWWZXX Yeaijlmknmoopnqp
+o
+Finalizando Consumidor:	ABrCD#u#G##JKpLsM#v#PQRSTUVWXY Zw a#t##e##1#xijk#5m2nopq8rstu9vwx#A#9 120B##05##C89
+0
+
+Finalizando Produtor:	ABC
+D
+#Finalizando Produtor:	#DA#B#C#D##K#L###E#####K#L######F##V#W#X#Y#Z# #LaW#X#Y#Ze #a####i#jek###m#nMiojpkq#rmsntoupvqwrxs#t#u vN1w2x####5 #1#28O#9#05
+#M#890
+PMNNRSOOTPVUYZbZ cd daeehfligjmohnpuxqvy zw12x23y347458BD6CEIFDJLEKMFLNQM
+
+RFinalizando Consumidor:	#OBVXaCDEF#W#YbcZcdfedgiehjniIJkKLoMsNlOp#tqwuzxv y1wz2Q6R#8 99D0FG
+
+JFinalizando Produtor:	###HD#FGH#KJK###IO###L###VWXOYZ#abMcdefPghijkNl#nopqQ#stuvwOxyz 12R###6#8U90
+WW#U#WVXXXY WZaXcbdeYgflmYgnmZ abcodhefnspgohi#qtprux1yv23w43
+
+9Finalizando Consumidor:	##0##4#FGH0I
+J
+KFinalizando Produtor:	L#M#N#5O###GHI
+J
+KFinalizando Produtor:	L#M#N#O#P#QP#RQG#RH##IU#JVUKWVLXWMYXNZYO ZPa QbaRcb#dc#edUfeVgfWhgXihY#iZ## la#mblncmodnpeoqfprgqshrtisu#tv#uwlvxmwynx#oy#p1#q2#r31s42t53u#4v#5w8#x9#y08#
+9#0C1
+2345##H890
+IIIJJJKLKLM#lLNMSmOTNPUnZopqr cdefstuvegfhfgwxy#g#ijnojopkrqwxr
+Conjunto de semaforos removido com sucesso!
+Conjunto de semaforos removido com sucesso!
+Conjunto de semaforos removido com sucesso!
+Segmento de memoria compartilhada removido com sucesso!
+Segmento de memoria compartilhada removido com sucesso!
+Segmento de memoria compartilhada removido com sucesso!Program ended with exit code: 0
+
+
+Filho consumidor 1 comecou...
+Filho produtor 2 comecou...
+Filho consumidor 3 comecou...
+Filho produtor 4 comecou...
+Filho consumidor 5 comecou...
+Filho produtor 6 comecou...
+Filho consumidor 7 comecou...
+Filho produtor 8 comecou...
+AABBCCDDEIIIFJJJKMKKLNLLMOQUNPRVY dfZaeg bhfaicgbjnhskxoltpyumzq 3rn48C159D20FEI
+
+Finalizando Produtor:	#G#C#OE#G#IJ##MNO###
+OQLSPVZTQW UbaXechYfdilgejmhkpntxq uyr1zv32w 437A5B6EIFJGKHLM
+
+Finalizando Consumidor:	####EFGH#JKLM##PQ######XY######e#gh###lmn#pqr###vw### 123456####
+QNROSTW
+Conjunto de semaforos removido com sucesso!
+Conjunto de semaforos removido com sucesso!
+Conjunto de semaforos removido com sucesso!
+Segmento de memoria compartilhada removido com sucesso!
+Segmento de memoria compartilhada removido com sucesso!
+Segmento de memoria compartilhada removido com sucesso!Program ended with exit code: 0
+
+
+Filho consumidor 1 comecou...
+Filho produtor 2 comecou...
+Filho consumidor 3 comecou...
+Filho produtor 4 comecou...
+Filho consumidor 5 comecou...
+Filho produtor 6 comecou...
+Filho consumidor 7 comecou...
+Filho produtor 8 comecou...
+ABCDEFGHIJKLMKNLOQPRQSRTSUZ VaWbXacebdfgeghlhmpinpqjsqrwytsxzutyv 3z714AE8GBF9CHG0DIH
+
+Finalizando Produtor:	##CDEFGOHI##J###SO#QRS##V###Z#ab##Ke#ghij##T#n#pq#Pstuv#x#############
+XXUQ
+
+Finalizando Consumidor:	####Y#Y#GHIJ####VOP#RSTUV#XYZZZ#abR##e#ghij##c#n#p qf#stuv#Sx###d#####a#####
+gkenhlfoiqgpurz1vs 2tw43xu548C659DG7IEH8JLNKSMTWTNYXUOZYaeZgbf hcglidhmjptnkquw v2x1w346045A
+E
+Finalizando Produtor:	A###E##HIJK###########WX##########hijk#m#########wx###12#456#890
+E
+Conjunto de semaforos removido com sucesso!
+Conjunto de semaforos removido com sucesso!
+Conjunto de semaforos removido com sucesso!
+Segmento de memoria compartilhada removido com sucesso!
+Segmento de memoria compartilhada removido com sucesso!
+Segmento de memoria compartilhada removido com sucesso!Program ended with exit code: 0
+
+
+
+Filho consumidor 1 comecou...
+Filho produtor 2 comecou...
+Filho consumidor 3 comecou...
+Filho produtor 4 comecou...
+Filho consumidor 5 comecou...
+Filho produtor 6 comecou...
+Filho consumidor 7 comecou...
+Filho produtor 8 comecou...
+ABCDEFGHIJGKHMINJOKPQOOLRPQZQV RRWaSXSbTYTcUZhdmriesnjtfokuxpvlyq2w493C50ED6
+
+Finalizando Produtor:	##CDE##HIJKL##O##RSTU###YZ ###F############Epq#st7#vwxy
+G8FHHPLITQMJURNVXSOWYaeiZbfj kmkq
+
+Finalizando Consumidor:	l##CD#FGHIJKLMNOPQRSTUVWXYZ ab##ef##ijklm##pq#st##n#####
+usnpvtoy 49z510A 2
+
+Finalizando Produtor:	A#CD##########OPQRSTUVWXYZ ab##efB##ijk1lmnopqrs3tuv##yz C1234G5#78940
+GDHLHENMPUONQVPORWQYSXZbfjkmgknnhpooqiprvrz ws 1261387249B850CF9
+
+Finalizando Produtor:	ABKCDEFGH##KLMNLOPQRSPTUVWXLYZ##b##efghi####nopq#######yz ###4567890
+QQQMRRSNUSTYZbU
+
+Finalizando Consumidor:	ABCDcEFGH# #KLMNOdPQRSTUVWXYZ #bcdefghi####nopq#######yz ########9#
+Vehglfih
+
+Finalizando Consumidor:	mA###EFGoH##KLqMNOPQRSiTUVWXrYZ #bscdefghi##lmnopqrst####yz ##########
+tjstukvxvy3ywz4z795 80B91
+
+Finalizando Produtor:	AB#E#EFGH######OP0QR##J#####ZK #bcdefghijk
+lmnopqrstuvwxyz 1#345#7890
+O
+Finalizando Produtor:	AKB##ELFGH#JKPL##OLPQR##Q########bcdefghijklmQnopqrTstuvwxUyz 1#345#X7890
+YYVZ ZWaa Xbcagijbkhkliplmqjmnrktx2suy63vz74w8 5x916C0HMD
+
+Finalizando Produtor:	ABCDE
+FG
+HFinalizando Consumidor:	#AJBKCLDME#FOGPHQ#RJ#KTLUMV#WOXPYQZR #aTbUcVdWeXfYgZh iajbcdefghijklmnopqrstuvwx#z 1###56####
+klmnopqrstIuvwx#z 1#N##56####
+EPOJFQP
+
+KFinalizando Consumidor:	####EFGGHIJRKLMNOPVQR#TUVWXYZ abcdefghijklmnopqrstuvwx#z 1###56####
+L SWeaTgfbjhgcikhnqluormwvyn xz51y 628ACFB9DGCHEJFDIKGJELMRWZNSX OTaPaUbQbVcfckgpdlreqmsyttnzu2u v3vw147
+
+
+
+Finalizando Consumidor:	ABCDEFinalizando Consumidor:	FGAHBICJDKELFMGNOPQRSTUHVWIXJ#KZL MaNbOcPdQeRfSgT#U#V#WkXl#mZn #apbqcrdsetfugvw#yz 1234567###
+###kxlmn#pqrst2uvwx0yz 1234567##0
+8EJ
+
+Finalizando Produtor:	AB9CDE##HIJFKLMNKOPQRSTUVWX#Z abcdefg###klmn#pqrstuvwxyz 1234567890
+K0LLG
+
+Finalizando Produtor:	ABCDEFG##JKLMNOPQRSTUVWX#Z abcdefg###klmn#pqrstuvwxyz 1234567890
+OMHMPSIVTWQ UbRaecibjljckmkqlntrwoxsx y536z67708DB
+
+Finalizando Produtor:	AB9FCDEFEGHII###G#N##F####JH#####Z KGa###N####L#R###m#S##U###Stuv#xyTzV 123X45678WZ90
+  X aacabefgbjghknpiol
+
+Finalizando Consumidor:	qAsBC#EFuGxHIyJKLr#N#z ##RSTzUsVWX#Z1  abc6#4efgh1i2jkl57mnopq9r3s#uAv#8xyz 0B12344596789
+0C
+
+Finalizando Produtor:	ABIC#M###D#I##LJMNN###RSTPKUVWX#RZ abcUQ#efghiVjklmRnoVpqrs#uvW#xyz 1Y2W345X6789Z0X
+bbcgc dhdaijekbjflcogmptynu zvo1 380C49
+
+Finalizando Produtor:	ABDCD#50###IJK#E##6#P
+Q
+R#Finalizando Produtor:	#A#F#B#C#DK#E#F####bIcJ#O#K##gL#####O#P#Q#RnoP######M#############Q###b1cN2######g6#7#R#8#9#S0#
+nSo##W####TT#####X#####Y#U##8 90
+Zccaeddgheieifjfjmkqtnrwuosxpvty w4z189AE09FB
+
+Finalizando Produtor:	0AIB##EFGG#I###MJ
+#
+#Finalizando Produtor:	#A#B#####HE#F#G#KH#IYJ#K #aM###Q####Q###L###i#j#k####RYn#o paqU#r#s#t#u#v#wS#x#y#zk #1V#####4p#q#r#s8Tt9u0v
+wUxWyz 1#X#4#V#X#890
+YXWaZbXcbd fcjmgdnhkoqilrp
+j
+Finalizando Consumidor:	smAvB##E FGHtI
+JK
+LFinalizando Consumidor:	MnA#B###w#QERFSGT1HUIVJWKX3LYMZ# 8a#b#cxQdR#SfTgUh2ViWjXkYlZm naobpcd#fghqirjstk#vwx4## 123l4m#n#o#p8q#r#s
+t#vwx9## 1y234#3##89#
+50z64
+F
+Finalizando Produtor:	ABJ####GH#JOGKLM#KO#QRSTPUHVWXYZL abcdQ#IfghijMklmnRopJqrst#NvwSxyz T12Y345c6#890
+UcZdVde eWfafXgbghrmwinsjxytkyzluz 341 v520E6J
+
+Finalizando Produtor:	FAB7##EF#HIJKKLMNG####8#TUVWX####b#####L#ijkHl####q9#####wxy###M####I67890
+PPUNQQVZRRaS STbafTc
+
+Finalizando Consumidor:	Ab###g##d#HIJKc#MkN#PQRhSTUVeWX#Zp abcdefghijkll###pq#####wxiy#####u###78#q#
+mjvrnwz2ox 37y148BE9HCFI0DGJ
+O
+Finalizando Produtor:	EABKCDEPFGHIJFK###OQPLQ##TT#VW#######d###hi##lmnopRqYr##uvwxUyz 1234##S7890
+ZZVd  ghaahiknjiloqtmpurwvzsx2 yt346uz57A CEFDKFGMNPH
+
+Finalizando Consumidor:	NA###O##GQHISJK##OPNOPQRSRTTVUVWPU#YZ Sa##d##ghijklmnWopqrstQuvwxYyTz #23X4c567##Zh#
+kdmilenjortpwsyuxzt y2518932040
+
+3Finalizando Produtor:	A#####GHIJ
+
+Finalizando Produtor:	A###K####G#H#I#J#K####T#U#V#######ZT#U#V######eZ####h###j#kel#m#nho#pjqkrlsmtnuovpwqx5ryszt u1v2w3x4y5z4 61726839405
+67C890H
+MMDINNEJOOPSYVQTZW UbXacehjlmnkmnpoorqspprtqvy52
+
+
+
+Finalizando Consumidor:	Finalizando Consumidor:	AA##CCDDEE##GGHzHIIJJKK##MMNwNOOPPQQ##SST6TUUVVWWXXYY3ZZ  aabbcc7##ee####hhx##jjkkllmm9nnooppqqrr4sstt##vvww8xxyyzz  11B2233445566077889900
+
+E9
+C
+Finalizando Produtor:	ABCFDEF##IJKI#MNOPQ#STULNVWXJYZ aMbcO#e##h#jPklNmnopqrRst#vwUxyz 1Q234567S8V90
+WWYWXXZaY Ybechkidflmgeonrfposxq yt3154u265v9B70wC8
+I
+Finalizando Produtor:	ABC9DEDFJ##IJ####0##QKRSTN#######
+#T
+#Finalizando Produtor:	#A#B#UCfD#E#F#####IlJmK#####N##QRS#T#U#######y###123#4#5#6#7#8#9#0#
+#Uf####U#lVm############V##V#23W45678W90
+VWXXXWY YXeaZfh
+b
+Finalizando Consumidor:	ABjCDEF#o#IJK##N##QRiSTUVWXYZ rab##ef
+#
+hFinalizando Consumidor:	iAjB#ClDmE#Fo####IrJ#K#####N#####Q#R#S#T#U#V#W5X#Y#Z# #a#b
+##ef#shij#plm#opj#rss###########t#5#####
+uxtuy1yvz2zw 3 641072D
+
+Finalizando Produtor:	ABCDEF#8#####EJ#####MRSTUF###K#Z ab##eNGf#hLij#lmO#op#QrstuvTwxyz 12W34X5U678#0
+XXYVYZYaZ Zb eicajjndkkolsplmtwq u1r1v25A736BCE4CDIJDEKKENLLORUMP
+
+VFinalizando Consumidor:	AB##EFG#IJKLVMNOPQRNSYTUVWWXWbYcZ aXbcfdef#c#ijkldYm#opgqr#ituvm##e####h##4##n##n##f
+iopgjpqvkryw3szx46 y57z986GDE7FGFHGGLHIHMIIJNRJKOSWaPXbTQcYfUZdgVjh poiuqvz 23w314x425y536z974D08IE
+
+Finalizando Produtor:	AB#DE#
+G
+HFinalizando Consumidor:	IAJKLMNOPQBR#SDTEU#VGWHXIYJZK LaMbNcOdP#QfRgShTiOjU#V#W#JX#YoZp qa#b#c#duF#vfwgxPhyizjK #1#2#3#4o5pG6q7#8#Q##u0vL
+wOxyz SR12345W67P8#X0
+SYYQZcegRfdhSgeilhfjmpgntqyuorzvp ws31xt428CH95ID06EJO
+
+Finalizando Produtor:	ABCDKFEFGPHIJKLS##GOPQ#QST#T##X#X###R###U###Y####a####V###Zst##b####f########8##
+ fgcghadhilei
+
+jFinalizando Consumidor:	Am#####GHfIJ###j#OkPQRnSqTUV#v XYZ 1abco2defghwij2klmn6o#q#s3t#vxwx3## 1723##6478y##
+4850596
+
+Finalizando Produtor:	FA##J##FGHOIJG##P##OP####P#H###YZQ abcdQefghijklmnoS#q#st#vwxy#R 12345V67T890
+VSWUWTXVXYaeYfjfZgkglh mhioinjpuz4qv 5rw61sx72ty83GB9LCH0MID
+
+Finalizando Produtor:	A
+B
+CFinalizando Consumidor:	DA#BFCGDH#IFJG#HLIMJ##OLPMQ#ROSPTQURVSWTXUYVZW XaY#Z# #ae#Nf#g#heiSfjgkhlimjnkolEpmqnros
+tpu
+qvFinalizando Consumidor:	rwAsxBtyuCv#Dw#Ex#Fy2G#3H#4I##J26#73L84M9#N06O
+7PS8Q9R0S
+OTUVTWFXYZ Ta###ePfUghijXklmUnopqVrstubvwxy##cV#23dh4i#W678j90i
+jokjkplkqlmlrmntsy38uz49v 50w1
+6
+Finalizando Produtor:	ABxCEDEFG#I##I####N####F###J#XYZ##O#G####K####H#lPm#opqRrLstuQvwxySz 1V23456T7R890
+VWU aXbfgihYhjimkijpjqkqkrlsvrw s3x1t4y285B39C6FHDG7EIHQMJIRNUXZSV  TaWaefXgjgnhophiqqituryvu1zwv 2xw315x9460D7
+5
+Finalizando Produtor:	#BCDEEFGHIJ###8N#K##R#MT##QWXLN##R#aS########O####noU###Tstu####X#V######67#YU#0
+YWZbZXcd Ydeaje
+
+Finalizando Consumidor:	######k#HIJbKLMNO#QlRSTUlVWXYZ aqbfcdefm###jklrmmno#qvrstuvn###n####w#s##6o7###xz
+tpy u481v592ECFGKDLMHOQPNISROJTSVUKTWYceUfZfkgmgnhnqooirptjqsuytrvzu3w5046x
+
+Finalizando Produtor:	##CJCDEEFGHIJKKFLMNDOPQRLSTGUVW#YNZ#M#QbcdefghiOjRk#mnNopqrstuPvwxS#Oz##23TV4#####Z0
+ZWU  ebaacfbdbghlchmidnijrwoksxpyl qz510 
+
+2Finalizando Produtor:	6#######D##F####3####EG#S###W#J#####HF####K##ij##I##G#######vLwxyOz 12S3456#TM##0
+TTUNUUVWOVWaXdXbeYfkfnglgphotqwuprxv
+
+Finalizando Consumidor:	##q#####zHIJKLMNyO###2STUVWXrY## ab#dze3fghijk7l1#noA4pqr#tuv8wx2yz B1234D##789H9CE#
+KIFLNJGMQONHRUPZSVb eWacfXdhgleihjmfinksow13tx24uy653z769C8G0D9HI
+
+OFinalizando Produtor:	QABJCDEFGHPIJKLMNROPQRS#UVWXS#######eSfghQijTk#########u#T#U#y##R########W#V0
+  XdaaYebfikgcjmlq
+k
+Finalizando Consumidor:	ABnC#######KLmMNrOPQRtSTUVoWXYn# abcdvefghijkulmnoppzq3r# tvuwvw#yz ##434####6#1#
+08C79
+D
+Finalizando Produtor:	ABCD8####E0####G#NOPQR###J###Y# abcde
+fghijkl
+mnoFinalizando Produtor:	pAqBrC#DtEu#vGw###yJz# #1##N3O4P#Q6R7#8#9#0#
+#M#Y# aHbcdKefghijkNlmnopqr#tuvwO#yz 1L#34#67O890PR
+UUWSVVXTWYaYdZgbe hiafjimprjqnsvrtowy14zx256y367z94A0FJB
+
+Finalizando Produtor:	AB##G#FGH#JKLCMNOPQRKSTUVWXYZ HabcdefOgLhij##m
+I
+Finalizando Consumidor:	nABoCp#Pq#r#s#tH#IM#JwKxLyMzN#O1P2Q3R4S5T6U7V#W9X0YSZ
+ SabcdQefNghijT#T#mnoRpqrsUtY##wxyz#123b45U67e#90
+ZVcf WdgaXhekprfsqstrxtusy 4vz15 w2683C7DHDLEIMFENJFGKOSHPLTZUUde eVaffibgjgmqkhnruoivpsz156t76u787v890E9
+
+Finalizando Produtor:	0AB##FEF0##
+#
+#Finalizando Produtor:	AB##GEFG###############U#V###Z #a#b####d#e#fUgVh#i#j#kZ# manbo#pdqerfsgthu
+vi
+#jFinalizando Produtor:	#kA##Bzm##n#1oE#pF#qG#r#5s#6t#7u#8v#9##0##
+##Oz###1######HV##5#6#7Z8P 9a0b
+#TdTefghQijk#mUnUopqrstRuv##VV#z#1###5S67W890
+WUTXVYcYWZdil emjfoqkgprtuhvx2w453x54860CD
+
+7Finalizando Produtor:	ABCDDEFGEH#####8#OGPFQRSTUHV9WXYZJ ##cdLefgQhi
+j
+kFinalizando Consumidor:	lAmKB#CoDpEqFrG#Ht#uMvJwKxL#M##R#O#P#Q3LR4S5T6U7V8W9
+#X
+
+YFinalizando Consumidor:	RZA B#C#DcNEdFeGfHgS#hJiKjULkMlNmO#PVoQpRqSrYT#UtVuWTvXwYxZV# #####Wc#d3e4f5Zg6h7i8UjklmW#opqr#tuvwx9###
+###34567X89 #
+VXabgkncoohdpirptwzsux t311u42529360D7GI
+
+Finalizando Produtor:	ABCDEFG#IL##L###H#######WJX####M#OcdefghiQjNklmnPopqRrOstuvwx#Qz S1V23456R78T90
+VWUZWXb dgcaeihfbjilpkjmqlrvrzs 3 t14u1
+
+Finalizando Consumidor:	92A5##5DEFG0CFH6IJ#L
+MD
+NFinalizando Produtor:	OAP#QCRGDS#TFUGVJHWIXJ##ZL EMaNbOcPdHefghijkQlRmSnopqrstTuUvV#W#X#z 123#45Z6 #a#b9c0d
+efghiKjklmnopMqrstPuv###z L1234N56##Q90
+SSORTTVY UWZacX bdfacgenjhqoktrvpusqwvyx2zw53 064C
+E
+HFinalizando Produtor:	A#CDDE#GH####I##########WX##I#a###E#####j#J###J###rstFuvwxyz MK123456Q#N#90L
+QROMRSVSZTbWU Xcfagjknokpqr
+
+sFinalizando Consumidor:	lA#CDr#sFGHIJtmKLMNO#QRtsSxTUVWX#uZ abc##fug##jkltmnopqrysvtuv#xy#5#1123475w#7###
+82B8939CDGDJEKNFOLPQGMQRVNWWR XXSaYdhbZejkofklpglqhqmrty2s343t44585A696B70ECI
+
+Finalizando Produtor:	MABCDEFDG#IJJKNLMN##QRS###WKXYZ#OaEbc#efgh##R###P#o###W###S#####Q####T#X###R ##0
+ YeeZa
+
+Finalizando Consumidor:	AB#f#f#F G#b##KLMgNgOPiQRST##cWhXYljZ dapbckdefmghiuqjklmx#opqy#n##ur##xy#y######z#####
+soz p2510A3E
+
+Finalizando Produtor:	AB##EFBG#4######F####C#5###WX#Z GabcDdefghJijkMlmnopqQrs#RNu##xyz 12345RS####0O
+RSTSWTTXUUaYbcgZhhc iildojsmpntkquoxz26 7807A9
+8
+Finalizando Produtor:	ABBCD0EFG#9#J##CMNO
+#
+QFinalizando Produtor:	RASBTICUD#EWFXGY#ZI Ja#b#MNO#QRcSdT#U##gWhXYZ abcdi#j#kglhminjokplqm#n#otpuq####xtDu##z# x###z# J##5######5N####
+#N#
+#
+
+Finalizando Consumidor:	KNABOO#P#O#FG#IJKQ#MNOPPQPRSTPU#WXYZQ RabcQdU#V#gZhijk ldmnopWq## tue##xf#z #X#a##5#f##g##
+Ybghkoihpqjirvr sw21xt325u783CBDHDCIEDEJFMNFGOOSTVHUWWabVXbceWcdfXdegjrrhkssvxltywm1zx2698y7
+
+Finalizando Consumidor:	9A0BCDEz#GHIJK#AMNO###STUVW0XYZ ab
+cdefgh#jkl
+m#Finalizando Produtor:	#A#B#CrDsEt#u#vHwIxJyKHz##M1N2O#I#####6S7
+T8U
+9Finalizando Produtor:	V0AW
+BXCYDZE #a#b#cIdIeJfKg#hJM#NjOk#l#m##S#T#JU#VrWsNXtYuZv abcdQwxyzeO#f1g2h###j#R67890
+kPRlm####rsUtuVvwxyz#S12###V678W9T0
+VWXUWXYZXc gdYihmopnipqjoqrkpuszvq t161907C0
+
+Finalizando Produtor:	AE8BCDE#
+#
+#Finalizando Produtor:	#A#BH#C#D#EK#####HQ####K##U###I#####QL#######U####J####g#h###M###########gph####u######y####p##z# #1u2######6y7z8 9102
+#M##67890
+MKNNNQOORTOPUWPVX QWYaehkmfilngo
+
+Finalizando Consumidor:	A#m##Eo#p#HIJKsLMNOPQR#nTUVWvXY# qaw###e fghiw1#klmnrop1q3r2s##vw#s## 212434##3#8#A8#
+54B96EC07F
+K
+Finalizando Produtor:	ABC#EOF#HQIJK###O#QRR#TUVPWXY# a#R##efghSiQ#klmnSopqrUsT##vwX###Y 1U234Y56Z789V0 
+  afgjbgkhlclmidmnquoyrv zsw1 35t69C670D78
+
+Finalizando Produtor:	ABCDEF#EHIJK#8##OPQRSTUHV###KZO abcd#I#L#hi##PlmnoM##rJst#Q####R#K######
+#
+7Finalizando Consumidor:	R#A#B#C
+DSESF#HIWJKSLM#XOTPQRSTUXVWXb#Z aYbcd#U##hi##lmno##rsYt##########c###Z7###V
+f dWgaehkspvltqwy2 xz314y6275z8AC 9BDELGCFMHOGQIPRHJSUYbTVZcUd Vdeahejbifkojtlukvmvwzlxw 270138C
+
+Finalizando Produtor:	ABCDEFGHIJ#LM#OPQRSTUV#XYZ abcdef#2hijkElmnop###tDuvwx3#F###E#J##5678L90
+OOPMPPQNQQRSVYaTWbZUc ehdkflelmgf
+
+nFinalizando Consumidor:	nABqCDuEFGxoHIJ#LrMNvOPyQRpSsTUVwWzXY qZ abcdexfghijkl mnopqrstu4vwxy1z 1##y4###88##
+50E96
+
+Finalizando Produtor:	FAHBC##F#HIJ7#LMNOPQJRSTIUV8WXY#K abJcdefOQghijkKPlmnoRpqrSstuLvwxyz 1##S4567890
+SXT TbYaUcZVbdWe hmnirnojstpwtuz 35 146172720A
+
+EFinalizando Produtor:	ABC#EIF##I#BKL######JF#####C##K#K####deDfghiLjNklRmnoSpMqrstSuvwTxNyz 1T234U567890O
+SUV TadWfbeXgcfYjhgnkoihlpjsxqt2ry4s35zt4 657018D
+
+Finalizando Produtor:	ABCDEF#J#IJKLMNNO#E#RSTUVKWXYO##abcFdeLfghijklP#Q###qrMst##RQ#####U##34Y5 67890
+V ZWaa bXbacYdbdienrjtskuotvxupwy1xqz25r
+ 
+3Finalizando Consumidor:	6AB0CDEF#1#IJK4LMNOP7QRSTUV
+W
+XFinalizando Produtor:	YAZB C#DbE#Fd#e#fIgJhKiLjMkNlO#PnQoRpSqTrUsVtWuXvYwZx y#zb #1d2e3f4g5h6Fi7j#k#l0#
+5nopqGr8stuvwxHyKz 123O4567RL8#0
+PRSMSQTNTROUUSV eVWafjbXkgcYlhnZqivor 1ps12qt233ru450E56F
+
+Finalizando Produtor:	AKBC#GEFG#7##KLLMNNO#####8##M######O###9#fQghiPjkl#nVopqrsQtRuvwxyzW 123Z45678S90
+ZX Tb acUabdgbcehclfmirwnzsxo ty2p153q62470385
+
+Finalizando Produtor:	ABC#EFG###KLFMNOPQRSJTNUVWX#GZ abKcdefOHghi##lLmnopqPQ####M###R###Q#2345N67890
+RRSWSaTbTccUUddVVeehmfifngjoruzps v1
+
+Finalizando Consumidor:	ABC#EFG3H#JtwKL#6#OPQ4RSTU9VWX#Zx a#c7def5ghij#0lmnoypqrst8uvwxy6z
+
+Finalizando Produtor:	 A1B#C93#4E5F6G7H8#9J0K
+L##FJOPQRSTUV0WX#KZ Ga#cdef
+g
+QhFinalizando Produtor:	iAjB#Cl#mEnFoGpHH######OqPrstuvwQxRySzT 1#34U5V6W7X8#9Z0 
+aQ#cdefgRhij#lmnoTpqrstRuvwxyVz 1#3456W7890S
+WWXXZXYY bZecadf bhmgnnchoosiuptv 4u15w2796BC07D
+D
+Finalizando Produtor:	AJBCDEFGHE#J##E##K######FU##L##F####G#M###ghiGj#lmNHnopqrstuOSvwxyXz 123T45P67890U
+YX aVZba ecbfilogjpqhkqrvxlsyz3t4 55u788v099
+
+Finalizando Produtor:	FAHBCDEKGFGHIIJKLNLMNOP##JSTUV#XYOMZ abc#efQg#ijkPl##opqN##tuRv####T#WS#234567890
+XXU YabVZcbWegXhciindjpores
+p
+Finalizando Consumidor:	sAtBCDEFGHIJxKLMNqOPQtRSTUzVWXyrYZ2 abcd e4fgh#j5kl#n0o1pqrst6u5v#xyz 12#47567D##
+0
+
+Finalizando Produtor:	#6BCDHGEFGHIJKKLLMNOPIQRMSTULVWXYZJ abcdNefgh#jklM#nopqrstuPv#xyOz 12#4N567#Q#P0
+QORQRWSSaXTbTUYcUVZdhm einruwysvxztwy x14zy258C63DD74EE8F5FLJQGKRMXLVNYW MZXaNc bhldcimejqrfursvgws1wxtx2yuy36AF47B5G8C6H9DLIPEQJQWVKRXWS bXTccYdidZejlnmskntoloupymv1zw62 x730184
+
+Finalizando Produtor:	2ABCDEE9FGHIJKJLMN0#FPQRST#KVWX
+Y
+
+Z 
+#Finalizando Consumidor:	bAcBdCFinalizando Produtor:	eD#EA#FBhGCiHjDIkEJlFKmGLnHMoINpJ##KP#LQsMRtNSu#TvP#wQVxRWySXzTY #Z1V 2W#3XbYcZd e##b#chde##hijkiljmklmnonpo#p##s#tsutvuwvxwyxzy z1 213243#4##4###8##98#098
+09
+0O
+OGLPPHMQINQTYRcZUSd VTeWafgXbghlqvxrmywzn xzo1y62z273BCGC4HHJ5IL6KJMQTLNRUMWVS XWTaYdhjZekmkn lopuyvqvwzrx w1y1x25239D64EE7IJJF8KM9GLNSWXMYZbYcc Zddae ebfhc
+l
+Finalizando Consumidor:	oABCiDtEmFGpHIJuKLjMN##QqRvSTUVWvXYZ abkcwdef#hijklmr#opqr#ztuvwl##z  ###4#4##58090
+51
+6
+Finalizando Produtor:	##CDEFCGHIJ27KLMDN##QRSTU38VWXYEZ abcdeIMf#FJhijGNklm#KopqrOH#tuvwL##z Q1P2345M#789R0Q
+QSV RTabSUcbTgdiUjjeokkfprlqwsmzxt ny1382A493B50FIC
+
+Finalizando Produtor:	JAGBCDD#FG#KIJHK####E##L##I####P#T#####cdeJfgh#UjkQlmnopYqrstuVvwxyz 123R45##890
+ZbZSc cdTdeejefkfoglspvxztwy uzx136v247w958DEHKLFILMGJNMQTNROUXPSYV TZWdagkelhbfmoirpnjsquotypuvz359w040x
+
+Finalizando Produtor:	A
+5B
+CFinalizando Produtor:	DAEBFCGGDHEIFJGK6HLIMJNKOLPMQNROSPTQRSTUVUWVXWYXYZ abcZd eafgbhcidjekflg#hniojpkqlr#sntoupvHqwrxsytzu#Kv#w#x3y
+z4#
+5#Finalizando Consumidor:	6#A#3B#4C95D06E
+#FK#G9H0IJ
+KIKLMNOPLQLRSTMUPVWXYMZM abNcdefQghijNklN#nOopqrsRtuSvOwxyzV#S##34T56##9W0
+aeUXbfYVgjcnokdppltquqmwvr 1ws226t3370E84
+H
+Finalizando Produtor:	ABFCDEF#H##5###I####RGSTUVWXYZ6 abcJdefgHhijklmnoNpqrKstuvRwxyz 1234567890
+ROLSSPTMTQXUUaYVVbZWcfindgjoehppuivqzv3w w41xx52y76A8z7B9GLC0NHMO
+
+Finalizando Produtor:	IANBCDEFGHIJPKLMNOPQJRSTUVW##ZO#######Q###W#######qrstuv wRxyz 1X2345a6789S0
+ YbeZcffjngogprsvqwtwy 2x4455y56z667 77808
+
+8Finalizando Produtor:	ABCD9EFGHFIKJKLMNOPPQRLSTUVWGXYQZ aMbc#ReHfg#U#j###noVpIqrst#vwVxyz #####W####Z#
+aaX 
+
+Finalizando Consumidor:	ABCbDEbFGHYIJKLMNOdaPQRSTUhcVWXYbZ abcdeifgihijd#m#mnjopjqrst#nvewxyzkk ##o##f#####l#
+psxztmy u5z186 927B038C
+
+Finalizando Produtor:	AIBC4#####ID###MJNONPQRSTUEVWXOYZ KabcdeRfTghijklLmnopqUVrstuvwxyzZ 12345 67890
+W aabXcefdYgigmnhponiqporjsqpkxtr2yu73z8vBD9GHCIHDIJILJKOPKPLQUW RVXbaWYcXbfgkhgclmhqmtnrwuosxy14yz257 368ADEHIBIFJCLNKDMOQUNVWVWZ bda cfeadgfilhej
+mo
+Finalizando Consumidor:	AfBCDEFGqHInJpKLMNrOvPQRy##UqVsWXYZzw abc1defg4hijkl6mxnop5q2rstu7vwyxy8z 312834z569789A#4
+0FJB
+G
+Finalizando Produtor:	AKB##CEFGHIJKLHMNOPQOR##RUVWXYZIP SabcdVeQfghijklmnoXpWqrstRuvwYxyz X123S4Z56789Y0
+XeeiYfjfZkgglohhmptivquw 2rx13s5246t3057D68
+
+Finalizando Produtor:	EABCJDE####J##################bcdefghijkNl#nopqrsKFtuvOwLxyz G1234567P890M
+TTQUNURVVZSWb eTfafkgbghlohmipsnjqtxoury2v6z03 74
+8
+Finalizando Produtor:	ABC1DEFG5##JKLDMNOPQRHMNSTUVW##Z a#cdefghOiPjIkOlmnoQ#qRJr##P##S#K######Q##T##7890
+VVRUWW dXXeagYfbhlgicmp
+
+Finalizando Consumidor:	jdABCDnEqkFuGHIJorKLMlNOPQvRSTUVpWXYZ  abcw3defg8hijxk1lmno4pq9rA##u2v5wx0#B# 123435
+#
+#Finalizando Produtor:	86A9B0C
+DEFGHICJKLMNOPQRST4UVWXYZ abcHdefghijklDmnopqrM##uvwxI## 12345Q6#890R
+RJRSSKSTTULXTVYbfWhcXgidjhlorumpsvqtnwxuoxy159A62B07C3DGJ
+
+Finalizando Produtor:	ABCDEEH#GH#KJK#####F#I##L#######GJ abcdefMghijklPmnHopqrstuvwxyT#Y 1Q2U345Z67890R
+YV aWZdbX eglcfhmdinoreuvsvw13wx24y36579BEG0CHFD
+
+Finalizando Produtor:	ABICDEFLGHIJGKLM#OOPQR#HPTUVWPXYZQ U##cdefQghi#R#V######R#S#####W#y# 1Y23456a7890
+adZbb ecfgcjghdkhinlsjtmtkuxu2v536w46707C8
+
+Finalizando Produtor:	ABCGDEFGHIDJK9LM#OPQRSTHUVWXYEZ abL#d
+e
+fFinalizando Consumidor:	MgAhBiCjDkElPFmGnH#I#MJ#K#LsNMtNuOvPwQQxR#S#N#T#U2VO3W4X5Y6Z7R 8a9b0O#
+dRefghijUkSlPSmnV####sTtuvwxZT####2b3W4567 8e90
+chfdaigknjqlokrmpsunx 15y126z27933840C9GDM
+
+Finalizando Produtor:	ABCDEE#GH#H#N##MN####FSTUVIWXYZ abcOdQefgJhijklmRnoPpqrsKtuvSwxyz Q12X34T5678b90
+YbUcZcdVedhWfiemgjnqtwryux zyv 16321740385
+
+Finalizando Produtor:	ABC4DE9FGHIJ6K#MNOFPQJRSTUNVGKW########O########P####qrLstuvwxPyz Q1234M567890Q
+PRTXQSUYZcgehihjfjiklgjnohkopiuqpzv1q 32r543605476
+
+Finalizando Produtor:	ABCD5EEF8GHJIJKLKMNOPQORSTUKVWXYPZL###c#LeQfgRhijklT#noMpU#r##Vuv##W#Nz #X#3X4b567Y8d90
+dcfeedgffheggifhhjkpuzqlv rw1ms2x5t6y78CDI9DE0JEF
+
+Finalizando Produtor:	##CDEOF##FIJKK##P#OP##G##L##Q#######cVRdM##ghijklWmXnbopqrsXtuvwxyYz 123c4567e890
+egdhfklnhomoprntqswurtxy136z4279CA80DBE
+
+Finalizando Produtor:	ABCDIEFG#KIJKLM#OPQR###VWXY###bcdefgh###########FtJuvwxLyz 12MG34567O890
+RRNPSOSUTXTVZ UWa cVeafkfngogqrorupvsvwyqwxrzx16 y271BCEF2GHINIHO
+
+Finalizando Consumidor:	PAJBCDIEPFGHSIJKLMNTJOPQRTQUSTKUVWXYWZ abcdefZgh##k##Vnopqrsd#uvwxy ez 12###W67eg#fj##k
+gklmfhmgnniorwosptx1quy2r5z306D47
+
+EFinalizando Produtor:	IAB#8DE#F#J#IJ##MM####GRSTUVKWNXYZ aRb#dLOefghijklmSnopPqr#tuVvwxyTz 12Y34W5678U#Z0
+YX dYZaei kflaglpmsmnqtnruxosvy24803A5
+
+Finalizando Produtor:	AB#BD4EFG#6IJKLEMCNOP#7RSTU##XHY#F a###8I####G##J###noOpqHrKstuvwxPQyz 12I345Q6R78#0
+QSTYRTUZSUVT cWaUdXglehqmtvrnwusy tv1z4w2 5x316AE72BGFLCHGMDNHIPOTJQ
+
+Finalizando Consumidor:	ABXUCDEFZGcHIJYKVLMN dOPQWReSTUVgWeXYfZk a#hcfdemfgh##ilklmnq#n#qrjsm#uvwoxryzu 123#np##s#v###
+yowtz3x7 4A815B96EC0FID
+
+JFinalizando Produtor:	GABCDESQFG##H##L#NOT#RQRSWTUVWXYZ aUX#cdefSghiVjYklmnopqTrst uZvwxyzU a1234567 89b0
+afkcbglcnhmdoniprtxqsuyz135 426135784689BFJLMNOPONPQPOQRSVYaTWZbcegdcfhikdjmlkenmpouxq vy12w457x896C097D
+
+0Finalizando Produtor:	HABCDEEFG
+H
+#Finalizando Produtor:	JA#BLICMDNE#FPGQHFRISJT##LVMJWN##YPZQGR#SaTKb#cVdWe#fYPgZh#iajLbkcldmenQofpgqhrUisj#k#l#m#nxRo#p#q#rV#s########X#x########
+W#X##Y#
+##
+#Finalizando Consumidor:	#XA#B
+CYYDEFGbHZIJKLMZNZ#PQdRSTcU VWX YZ abecdedafghaijklfmnopqebrs##i#g#x##f##n####j##
+Conjunto de semaforos removido com sucesso!
+Conjunto de semaforos removido com sucesso!
+Conjunto de semaforos removido com sucesso!
+Segmento de memoria compartilhada removido com sucesso!
+Segmento de memoria compartilhada removido com sucesso!
+Segmento de memoria compartilhada removido com sucesso!Program ended with exit code: 0
