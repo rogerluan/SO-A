@@ -145,7 +145,7 @@ void produceCharacters() {
         // Generates a random number between 1 and 5
         number = (rand() % 5) + 1;
 #ifdef LOG_DEBUG
-        fprintf(stdout, "\n<random number: %d>", number);
+        fprintf(stdout, "\n\n<random number: %d>", number);
         fflush(stdout);
 #endif
         lockSemaphore(producer_semaphore_id);
