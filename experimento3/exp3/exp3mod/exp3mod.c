@@ -42,7 +42,7 @@
 #define BUFFER_SHM_KEY 9019
 //////////////////// Global Variables ////////////////////
 
-char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890 abcdefghijklmnopqrstuvwxyz";
+char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890";
 
 int	producer_semaphore_id;
 int	consumer_semaphore_id;
