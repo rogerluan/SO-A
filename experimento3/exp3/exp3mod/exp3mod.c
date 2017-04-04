@@ -111,11 +111,10 @@ int main(int argc, char *argv[]) {
         // Consumer Child
         fprintf(stdout, "Filho consumidor %d comecou...\n", child_number);
         fflush(stdout);
-        //consumeCharacters();
+        consumeCharacters();
     } else {
         // Sleeps for a certain amount of time so the children can do their jobs.
         // After this time, kills the children, removes the semaphores and shared memories and exits the program.
-        usleep(900000);
         usleep(15000);
         
         // Killing the children
