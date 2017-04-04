@@ -160,6 +160,7 @@ void produceCharacters() {
             if ((temp_index + i < sizeof(alphabet)) && temp_index + i < BUFFER_SIZE) {
                 lockSemaphore(buffer_semaphore_id);
                 shared_mem_buffer_address[temp_index + i] = alphabet[temp_index + i];
+                //fprintf(stdout, "Buffer[%d] = %c\n", temp_index + i, shared_mem_buffer_address[temp_index + i]);
                 fprintf(stdout, "%c", shared_mem_buffer_address[temp_index + i]);
                 fflush(stdout);
                 unlockSemaphore(buffer_semaphore_id);
