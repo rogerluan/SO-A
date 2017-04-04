@@ -116,6 +116,7 @@ int main(int argc, char *argv[]) {
         // Sleeps for a certain amount of time so the children can do their jobs.
         // After this time, kills the children, removes the semaphores and shared memories and exits the program.
         usleep(900000);
+        usleep(15000);
         
         // Killing the children
         int i;
