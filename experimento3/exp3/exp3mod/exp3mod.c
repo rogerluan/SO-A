@@ -11,6 +11,7 @@
 //
 
 #define PROTECT
+//#define LOG_DEBUG
 
 /*
  * Includes Necessarios
@@ -28,6 +29,9 @@
 #include <string.h>             /* for strerror() */
 
 //////////////////// Constants ////////////////////
+#define NO_OF_CHILDREN 8
+#define SEM_PERMS 0666
+#define BUFFER_SIZE 64
 
 #define PRODUCER_SEM_KEY 9014
 #define CONSUMER_SEM_KEY 9015
@@ -36,13 +40,9 @@
 #define PRODUCER_SHM_KEY 9017
 #define CONSUMER_SHM_KEY 9018
 #define BUFFER_SHM_KEY 9019
-
-#define NO_OF_CHILDREN 8
-#define SEM_PERMS 0666
-
 //////////////////// Global Variables ////////////////////
 
-char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890";
+char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890 abcdefghijklmnopqrstuvwxyz";
 
 int	producer_semaphore_id;
 int	consumer_semaphore_id;
@@ -60,8 +60,11 @@ struct sembuf semaphore_unlock_op[1];
 
 //////////////////// Functions ////////////////////
 
-void produceCharacters(int child_number);
+void produceCharacters();
 void consumeCharacters();
+void printBuffer();
+void lockSemaphore(int semaphore_id);
+void unlockSemaphore(int semaphore_id);
 void createSemaphore(int *semaphore_id, int semaphore_key);
 void createIntSharedMemory(int *shared_mem_id, int shared_mem_key, int **shared_mem_address);
 void createCharSharedMemory(int *shared_mem_id, int shared_mem_key, char **shared_mem_address);
@@ -70,6 +73,7 @@ void removeSharedMemory(int shared_mem_id);
 
 int main(int argc, char *argv[]) {
     int pid[NO_OF_CHILDREN];
+    srand((int)time(NULL));   // should only be called once
     
     // Initializing the semaphore operators
     semaphore_lock_op[0].sem_num = 0;
@@ -102,17 +106,18 @@ int main(int argc, char *argv[]) {
         // Producer Child
         fprintf(stdout, "Filho produtor %d comecou...\n", child_number);
         fflush(stdout);
-        produceCharacters(child_number);
+        produceCharacters();
     } else if (rtn == 0 && (child_number % 2) != 0) {
         // Consumer Child
         fprintf(stdout, "Filho consumidor %d comecou...\n", child_number);
-        consumeCharacters();
+        fflush(stdout);
+        //consumeCharacters();
     } else {
-        // Espera-se um determinado tempo em que os filhos irão imprimir os dados na tela
-        // Após este tempo, mata-se os filhos, encerra-se o semáforo e memória compartilhada, e o programa termina.
-        usleep(2000);
+        // Sleeps for a certain amount of time so the children can do their jobs.
+        // After this time, kills the children, removes the semaphores and shared memories and exits the program.
+        usleep(900000);
         
-        // Matando os filhos
+        // Killing the children
         int i;
         for (i = 0; i < NO_OF_CHILDREN; ++i) {
             kill(pid[i], SIGKILL);
@@ -129,81 +134,131 @@ int main(int argc, char *argv[]) {
     }
 }
 
-void produceCharacters(int child_number) {
+void produceCharacters() {
     int number;
-    int tmp_index;
+    int temp_index;
     int i;
-    srand((int)time(NULL));   // should only be called once
-    // Este tempo permite que todos os filhos sejam iniciados
-    usleep(3000);
-    
-    // Loop que fará com que os filhos imprimam o vetor de
-    // caracteres até o timer de 15000micro seg do pai se esgotar
+    // This sleep time allows the children to be initialied.
+    usleep(4000);
+    // Loop that will make the children do their job until the parent process kills them
     while (1) {
-        // Generates a random numerb between 1 and 5
+        // Generates a random number between 1 and 5
         number = (rand() % 5) + 1;
+#ifdef LOG_DEBUG
+        fprintf(stdout, "\n<random number: %d>", number);
+        fflush(stdout);
+#endif
+        lockSemaphore(producer_semaphore_id);
         
-#ifdef PROTECT
-        if (semop(producer_semaphore_id, semaphore_lock_op, 1) == -1) {
-            fprintf(stderr, "chamada semop() falhou, impossivel fechar o recurso! Erro: %s", strerror(errno));
-            exit(1);
-        }
+        temp_index = *shared_mem_producer_index_address % BUFFER_SIZE;
+#ifdef LOG_DEBUG
+        fprintf(stdout, "\n<Temp Index: %d>, <producer index: %d>\n", temp_index, *shared_mem_producer_index_address);
+        fflush(stdout);
 #endif
         
-        /*
-         * Lendo o indice do segmento de memoria compartilhada
-         */
-        tmp_index = *shared_mem_producer_index_address;
-        
-        /*
-         * Repita o numero especificado de vezes, esteja certo de nao
-         * ultrapassar os limites do vetor, o comando if garante isso
-         */
         for (i = 0; i < number; ++i) {
-            if (!(tmp_index + i >= sizeof(alphabet))) {
-                shared_mem_buffer_address[tmp_index + i] = alphabet[tmp_index + i];
-                fprintf(stdout, "%c", alphabet[tmp_index + i]);
+            if ((temp_index + i < sizeof(alphabet)) && temp_index + i < BUFFER_SIZE) {
+                lockSemaphore(buffer_semaphore_id);
+                shared_mem_buffer_address[temp_index + i] = alphabet[temp_index + i];
+                fprintf(stdout, "%c", shared_mem_buffer_address[temp_index + i]);
                 fflush(stdout);
+                unlockSemaphore(buffer_semaphore_id);
                 usleep(number);
             } else {
                 break;
             }
         }
         
-        *shared_mem_producer_index_address = tmp_index + i;
-        
-        /*
-         * Se o indice e maior que o tamanho do alfabeto, exibe um
-         * caractere return para iniciar a linha seguinte e coloca
-         * zero no indice
-         */
-        if (*shared_mem_producer_index_address >= sizeof(alphabet)) {
-            *shared_mem_buffer_address = '\n';
-            shared_mem_buffer_address -= (sizeof(alphabet) * sizeof(char));
-            int j;
-            int printSize = sizeof(alphabet);
-            fprintf(stdout, "\n\n Finalizando: ");
-            fflush(stdout);
-            for (j = 0; j <= printSize; ++j) {
-                fprintf(stdout, "%s", (char *)shared_mem_buffer_address + (j * sizeof(char)));
-                fflush(stdout);
-            }
-            fprintf(stdout, "\n\n");
-            fflush(stdout);
-            *shared_mem_producer_index_address = 0;
-        }
-        
-#ifdef PROTECT
-        if (semop(producer_semaphore_id, semaphore_unlock_op, 1) == -1) {
-            fprintf(stdout, "chamada semop() falhou, impossivel liberar o recurso!");
-            exit(1);
-        }
+#ifdef LOG_DEBUG
+        fprintf(stdout, "\n<Generated i: %d>", i);
+        fflush(stdout);
 #endif
+        *shared_mem_producer_index_address += i;
+        if ((*shared_mem_producer_index_address % BUFFER_SIZE) >= BUFFER_SIZE-1) {
+            lockSemaphore(buffer_semaphore_id);
+            shared_mem_buffer_address[BUFFER_SIZE] = '\n';
+            unlockSemaphore(buffer_semaphore_id);
+            fprintf(stdout, "\n\nFinalizando Produtor:\t");
+            fflush(stdout);
+            printBuffer();
+        }
+        unlockSemaphore(producer_semaphore_id);
     }
 }
 
 void consumeCharacters() {
+    int number;
+    int temp_index;
+    int i;
     
+    usleep(4000);
+    
+    while (1) {
+        lockSemaphore(consumer_semaphore_id);
+        lockSemaphore(buffer_semaphore_id);
+        // Generates a random numerb between 1 and 5
+        number = (rand() % 5) + 1;
+        number = MIN(number, ((*shared_mem_producer_index_address) - (*shared_mem_consumer_index_address)));
+        
+        temp_index = *shared_mem_consumer_index_address % BUFFER_SIZE;
+        
+        for (i = 0; i < number; ++i) {
+            // What we're reading/consuming (setting as `#`) must be <= than what has been produced so far.
+            if (temp_index + i <= *shared_mem_producer_index_address) {
+                shared_mem_buffer_address[temp_index + i] = '#';
+                usleep(number);
+            } else {
+                break;
+            }
+        }
+        
+        *shared_mem_consumer_index_address += i;
+        
+        // If reached the end of the buffer
+        if (*shared_mem_consumer_index_address >= BUFFER_SIZE-1) {
+            fprintf(stdout, "\n\nFinalizando Consumidor:\t");
+            //fflush(stdout);
+            printBuffer();
+        }
+        unlockSemaphore(consumer_semaphore_id);
+        unlockSemaphore(buffer_semaphore_id);
+    }
+}
+
+void printBuffer() {
+    int j;
+    lockSemaphore(buffer_semaphore_id);
+    for (j = 0; j < BUFFER_SIZE; ++j) {
+        fprintf(stdout, "%c", shared_mem_buffer_address[j]);
+        fflush(stdout);
+    }
+    unlockSemaphore(buffer_semaphore_id);
+    fprintf(stdout, "\n");
+    fflush(stdout);
+}
+
+void lockSemaphore(int semaphore_id) {
+#ifdef PROTECT
+    if (semop(semaphore_id, semaphore_lock_op, 1) == -1) {
+        fprintf(stderr, "chamada semop() falhou, impossivel fechar o recurso! Erro: %s", strerror(errno));
+        exit(1);
+    } else {
+        //fprintf(stdout, "\n<Locked semaphore with id: %d>\n", semaphore_id);
+        //fflush(stdout);
+    }
+#endif
+}
+
+void unlockSemaphore(int semaphore_id) {
+#ifdef PROTECT
+    if (semop(semaphore_id, semaphore_unlock_op, 1) == -1) {
+        fprintf(stdout, "chamada semop() falhou, impossivel liberar o recurso!");
+        exit(1);
+    } else {
+        //fprintf(stdout, "\n<Unlocked semaphore with id: %d>\n", semaphore_id);
+        //fflush(stdout);
+    }
+#endif
 }
 
 void createSemaphore(int *semaphore_id, int semaphore_key) {
@@ -246,7 +301,6 @@ void createCharSharedMemory(int *shared_mem_id, int shared_mem_key, char **share
 }
 
 void removeSemaphore(int semaphore_id) {
-    // Removendo o semaforo
     if (semctl(semaphore_id, 0, IPC_RMID, 0) != 0) {
         fprintf(stderr, "Impossivel remover o conjunto de semaforos! Error: %s\n semaphore id: %d", strerror(errno), semaphore_id);
         exit(1);
@@ -256,7 +310,6 @@ void removeSemaphore(int semaphore_id) {
 }
 
 void removeSharedMemory(int shared_mem_id) {
-    // Removendo a memoria compartilhada
     if (shmctl(shared_mem_id, IPC_RMID, NULL) != 0) {
         fprintf(stderr, "Impossivel remover o segmento de memoria compartilhada!\n");
         exit(1);
