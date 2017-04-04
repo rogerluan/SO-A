@@ -29,6 +29,7 @@
 #include <string.h>             /* for strerror() */
 
 //////////////////// Constants ////////////////////
+
 #define NO_OF_CHILDREN 8
 #define SEM_PERMS 0666
 #define BUFFER_SIZE 64
@@ -40,35 +41,97 @@
 #define PRODUCER_SHM_KEY 9017
 #define CONSUMER_SHM_KEY 9018
 #define BUFFER_SHM_KEY 9019
+
 //////////////////// Global Variables ////////////////////
 
 char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890";
 
-int	producer_semaphore_id;
-int	consumer_semaphore_id;
-int	buffer_semaphore_id;
+int	producer_semaphore_id; // Stores the id of the producer semaphore
+int	consumer_semaphore_id; // Stores the id of the consumer semaphore
+int	buffer_semaphore_id; // Stores the id of the buffer semaphore
 
-int shared_mem_producer_index_id;
-int *shared_mem_producer_index_address;
-int shared_mem_consumer_index_id;
-int *shared_mem_consumer_index_address;
-int shared_mem_buffer_id;
-char *shared_mem_buffer_address;
+int shared_mem_producer_index_id; // Stores the id of the producerindex shared memory
+int *shared_mem_producer_index_address; // Pointer to the address where it's stored the current index of the producer
+int shared_mem_consumer_index_id; // Stores the id of the consumer index shared memory
+int *shared_mem_consumer_index_address; // Pointer to the address where it's stored the current index of the consumer
+int shared_mem_buffer_id; // Stores the id of the buffer shared memory resource
+char *shared_mem_buffer_address; // Pointer to the address where it's stored the beginning of the char buffer
 
-struct sembuf semaphore_lock_op[1];
-struct sembuf semaphore_unlock_op[1];
+struct sembuf semaphore_lock_op[1]; // Struct containing a lock operation
+struct sembuf semaphore_unlock_op[1]; // Struct containing an unlock operation
 
 //////////////////// Functions ////////////////////
 
+/**
+ Reads 1-5 characters from the alphabet vector and loads them into the buffer.
+ Once the buffer limit is reached, prints it.
+ */
 void produceCharacters();
+
+/**
+ Reads the number of characters available to be read in the buffer (limited to 5)
+ and replace them with the `#` character.
+ Once the buffer limit is reached, prints it.
+ */
 void consumeCharacters();
+
+/**
+ Prints the content of the buffer.
+ */
 void printBuffer();
+
+/**
+ Locks a semaphore.
+
+ @param semaphore_id id of the semaphore to be locked.
+ */
 void lockSemaphore(int semaphore_id);
+
+/**
+ Unlocks a semaphore.
+
+ @param semaphore_id id of the semaphore to be unlocked.
+ */
 void unlockSemaphore(int semaphore_id);
+
+/**
+ Creates a semaphore.
+
+ @param semaphore_id pointer to the semaphore id that will be returned from the semaphore creation function.
+ @param semaphore_key key to be used to generate (or fetch) the semaphore.
+ */
 void createSemaphore(int *semaphore_id, int semaphore_key);
+
+/**
+ Creates a shared memory that points to an integer.
+
+ @param shared_mem_id pointer to the shared memory id that will be returned from the shared memory creation function.
+ @param shared_mem_key key to be used to generate (or fetch) the shared memory.
+ @param shared_mem_address pointer to the shared memory address pointer attached to the generated (or fetched) shared memory
+ */
 void createIntSharedMemory(int *shared_mem_id, int shared_mem_key, int **shared_mem_address);
+
+/**
+ Creates a shared memory that points to a char.
+ 
+ @param shared_mem_id pointer to the shared memory id that will be returned from the shared memory creation function.
+ @param shared_mem_key key to be used to generate (or fetch) the shared memory.
+ @param shared_mem_address pointer to the shared memory address pointer attached to the generated (or fetched) shared memory
+ */
 void createCharSharedMemory(int *shared_mem_id, int shared_mem_key, char **shared_mem_address);
+
+/**
+ Marks a semaphore to be removed.
+
+ @param semaphore_id id of the semaphore to be marked to be removed.
+ */
 void removeSemaphore(int semaphore_id);
+
+/**
+ Marks a shared memory to be removed.
+ 
+ @param shared_mem_id id of the shared memory to be marked to be removed.
+ */
 void removeSharedMemory(int shared_mem_id);
 
 int main(int argc, char *argv[]) {
