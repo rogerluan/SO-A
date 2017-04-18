@@ -10,7 +10,7 @@
 //  ROGER OBA       12048534
 //
 
-#define PROTECT
+//#define PROTECT
 
 /*
  * Includes Necessarios
@@ -156,7 +156,7 @@ int main(int argc, char *argv[]) {
     } else {
         // Espera-se um determinado tempo em que os filhos ir‹o imprimir os dados na tela
         // Ap—s este tempo, mata-se os filhos, encerra-se o sem‡foro e mem—ria compartilhada, e o programa termina.
-        usleep(15000);
+        usleep(10000);
     
         // Matando os filhos
         int i;
