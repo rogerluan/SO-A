@@ -60,8 +60,8 @@
 		C5C51FA91E895F5400CDF201 = {
 			isa = PBXGroup;
 			children = (
-				C5C51FB41E895F5400CDF201 /* exp3 */,
-				C5C51FC11E895FAA00CDF201 /* exp3mod */,
+				C5F8294A1E936DED001A3089 /* exp3mod.c */,
+				C5F8294C1E936E0E001A3089 /* Experimento3.c */,
 				C5C51FB31E895F5400CDF201 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -172,7 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5C51FCB1E89600C00CDF201 /* Experimento3.c in Sources */,
+				C5F8294E1E936E19001A3089 /* Experimento3.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,7 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C56E1C041E936C14009B7949 /* exp3mod.c in Sources */,
+				C5F8294B1E936DED001A3089 /* exp3mod.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

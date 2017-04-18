@@ -182,7 +182,7 @@ int main(int argc, char *argv[]) {
     } else {
         // Sleeps for a certain amount of time so the children can do their jobs.
         // After this time, kills the children, removes the semaphores and shared memories and exits the program.
-        usleep(15000);
+        usleep(90000);
         
         // Killing the children
         int i;
@@ -277,7 +277,7 @@ void consumeCharacters() {
             }
         }
         
-        *shared_mem_consumer_index_address += i;
+        *shared_mem_consumer_index_address += temp_index + i;
         
         // If reached the end of the buffer
         if (temp_index + i > BUFFER_SIZE-1) {
