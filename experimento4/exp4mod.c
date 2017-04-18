@@ -82,7 +82,7 @@ void *thinkAndEat(int n) {
         putChopsticks(n);
     }
     fprintf(stdout, "Philosopher %d finished eating %d times\n", n, NUM_OF_ITERATIONS);
-    fflush(stdout);   
+    fflush(stdout);
     return(NULL);
 }
 
