@@ -1,10 +1,19 @@
-//Includes Necessarios
+//
+//  exp4mod
+//
+//  Created on Apr 18th 2017
+//
+//  ALEX VENTURINI  15294739
+//  BRUNO PEDROSO   12662136
+//  LUAN BONOMI     15108780
+//  PEDRO CATALINI  15248354
+//  ROGER OBA       12048534
+//
 
-#include <pthread.h>			/* para poder manipular threads */
-#include <stdio.h>			/* para printf() */
-#include <stdlib.h>
+#include <pthread.h>    // threads
+#include <stdio.h>      // printf()
 #include <unistd.h>     // usleep();
-#include <stdbool.h>
+#include <stdbool.h>    // bool
 
 #define NUM_OF_PHILOSOPHERS 5
 #define NUM_OF_ITERATIONS 365
@@ -81,7 +90,7 @@ void *thinkAndEat(int n) {
         takeChopsticks(n);
         putChopsticks(n);
     }
-    fprintf(stdout, "Philosopher %d finished eating %d times\n", n, NUM_OF_ITERATIONS);
+    fprintf(stdout, "\nPhilosopher %d finished eating %d times\n", n, NUM_OF_ITERATIONS);
     fflush(stdout);
     return(NULL);
 }
@@ -97,7 +106,7 @@ int main(int argc, char *argv[]) {
     cleanEatingStates();
     
     int i;
-    // Initialize 5 mutex
+    // Initialize 6 mutex
     for (i = 0; i < NUM_OF_PHILOSOPHERS; i++) {
         pthread_mutex_init(&chopsticks[i], NULL);
     }
@@ -113,7 +122,7 @@ int main(int argc, char *argv[]) {
         pthread_join(philosophers[i],NULL);
     }
     
-    // Destroy all 5 mutex
+    // Destroy all 6 mutex
     for (i = 0; i < NUM_OF_PHILOSOPHERS; ++i) {
         pthread_mutex_destroy(&chopsticks[i]);
     }

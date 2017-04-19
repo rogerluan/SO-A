@@ -153,7 +153,7 @@ void *consume(void *threadid) {
  * Rotina Principal (que tambem e a thread principal, quando executada)
  */
 int main(int argc, char *argv[]) {
-    int tp[NUM_THREADS], tc[NUM_THREADS];
+    pthread_t tp[NUM_THREADS], tc[NUM_THREADS];
     int i;
     
     start = &buffer[0];
@@ -180,8 +180,7 @@ int main(int argc, char *argv[]) {
         pthread_join(tc[i], NULL);
         pthread_join(tp[i], NULL);
     }
-    printf("Esperando as threads terminarem main()\n"); // avisa q ainda tem threads para serem terminadas.
-    pthread_exit(NULL);
+    return 0;
     
     /* 
      * Pergunta 4: O que ocorre com as threads criadas, se ainda
