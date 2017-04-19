@@ -28,6 +28,7 @@ typedef enum {
 } status;
 
 status states[NUM_OF_PHILOSOPHERS];
+int eatCount[NUM_OF_PHILOSOPHERS];
 pthread_t philosophers[NUM_OF_PHILOSOPHERS];
 pthread_mutex_t chopsticks[NUM_OF_PHILOSOPHERS];
 pthread_mutex_t mutex;
@@ -61,6 +62,7 @@ void eatIfPossible(int n) {
     printStatus();
     if (states[n] == statusWaiting && states[LEFT] != statusEating && states[RIGHT] != statusEating) {
         states[n] = statusEating;
+        eatCount[n]++;
         fprintf(stdout, "\nPhilosopher %d has started eating now.\n", n);
         fflush(stdout);
         pthread_mutex_unlock(&chopsticks[n]);
@@ -84,8 +86,7 @@ void putChopsticks(int n) {
 }
 
 void *thinkAndEat(int n) {
-    int i;
-    for (i = 0; i < NUM_OF_ITERATIONS; ++i) {
+    while (eatCount[n] < NUM_OF_ITERATIONS) {
         think(n);
         takeChopsticks(n);
         putChopsticks(n);
@@ -95,15 +96,16 @@ void *thinkAndEat(int n) {
     return(NULL);
 }
 
-void cleanEatingStates() {
+void cleanStates() {
     int i;
     for (i = 0; i < NUM_OF_PHILOSOPHERS; ++i) {
         states[i] = statusThinking;
+        eatCount[i] = 0;
     }
 }
 
 int main(int argc, char *argv[]) {
-    cleanEatingStates();
+    cleanStates();
     
     int i;
     // Initialize 6 mutex

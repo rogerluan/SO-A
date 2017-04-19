@@ -153,7 +153,6 @@ void *consume(void *threadid) {
  * Rotina Principal (que tambem e a thread principal, quando executada)
  */
 int main(int argc, char *argv[]) {
-    pthread_t tp[NUM_THREADS], tc[NUM_THREADS];
     int i;
     
     start = &buffer[0];
@@ -165,20 +164,20 @@ int main(int argc, char *argv[]) {
          * Pergunta 3: para que serve cada um dos argumentos usados com pthread_create?
          */
         
-        if ((tc[i] = pthread_create(&consumers[i], NULL, consume, (void *)i + 1))) {
+        if (pthread_create(&consumers[i], NULL, consume, (void *)i + 1)) {
             printf("ERRO: impossivel criar um thread consumidor\n");
             exit(-1);
         }
         
-        if ((tp[i] = pthread_create(&producers[i], NULL, produce, (void *)i + 1))) {
+        if (pthread_create(&producers[i], NULL, produce, (void *)i + 1) ) {
             printf("ERRO: impossivel criar um thread rodutor\n");
             exit(-1);
         }
     }
     
     for (i = 0; i < NUM_THREADS; ++i) {
-        pthread_join(tc[i], NULL);
-        pthread_join(tp[i], NULL);
+        pthread_join(consumers[i], NULL);
+        pthread_join(producers[i], NULL);
     }
     return 0;
     
