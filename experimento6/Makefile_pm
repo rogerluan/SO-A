@@ -1,10 +1,20 @@
+#
+#  Created on May 23rd 2017
+#
+#  ALEX VENTURINI  15294739
+#  BRUNO PEDROSO   12662136
+#  LUAN BONOMI     15108780
+#  PEDRO CATALINI  15248354
+#  ROGER OBA       12048534
+#
+
 .include <bsd.own.mk>
 
 # Makefile for Process Manager (PM)
 PROG=	pm
 SRCS=	main.c forkexit.c exec.c time.c alarm.c \
 	signal.c utility.c table.c trace.c getset.c misc.c \
-	profile.c mcontext.c schedule.c mdc.c
+	profile.c mcontext.c schedule.c whosthere.c mdc.c
 
 DPADD+=	${LIBSYS} ${LIBTIMERS}
 LDADD+=	-lsys -ltimers

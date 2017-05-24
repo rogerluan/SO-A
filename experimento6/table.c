@@ -1,4 +1,15 @@
-/* This file contains the table used to map system call numbers onto the
+//
+//  Created on May 23rd 2017
+//
+//  ALEX VENTURINI  15294739
+//  BRUNO PEDROSO   12662136
+//  LUAN BONOMI     15108780
+//  PEDRO CATALINI  15248354
+//  ROGER OBA       12048534
+//
+
+/* This file contains the table used to map system call numbers onto 
+the
  * routines that perform them.
  */
 
@@ -59,5 +70,6 @@ int (* const call_vec[NR_PM_CALLS])(void) = {
 	CALL(PM_GETEPINFO)	= do_getepinfo,		/* getepinfo(2) */
 	CALL(PM_GETPROCNR)	= do_getprocnr,		/* getprocnr(2) */
 	CALL(PM_GETSYSINFO)	= do_getsysinfo,	/* getsysinfo(2) */
-	CALL(PM_MDC)		= do_mdc		/* math gcd */
+	CALL(WHOSTHERE)		= whosthere,
+	CALL(PM_MDC)		= do_mdc
 };
