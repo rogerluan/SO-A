@@ -1,0 +1,90 @@
+O primeiro argumento deve abrir um arquivo. Abortando.
+Executing open function.
+Executing open function.
+Executing open function.
+Executing open function.
+Executing seek function.
+Offset para deslocar: 50000
+Offset deslocado:50000
+Executing read function.
+Bytes a serem lidos: 2.
+Conteudo do arquivo: 
+Total de bytes lidos: 2
+lastdataread: Executing seek function.
+Offset para deslocar: 100003
+Offset deslocado:100003
+Executing write function.
+Print last buffer.Bytes a serem escritos: 2.
+Conteudo escrito: 
+Total de bytes escritos: 2
+
+
+O primeiro argumento deve abrir um arquivo. Abortando.
+Executing open function.
+Executing write function.
+Print content.Bytes a serem escritos: 12.
+Conteudo escrito: aaabcdefghij
+Total de bytes escritos: 12
+Executing seek function.
+Offset para deslocar: 0
+Offset deslocado:0
+Executing write function.
+Print content.Bytes a serem escritos: 2.
+Conteudo escrito: ##
+Total de bytes escritos: 2
+Executing close function.
+
+
+Executing open function.
+Executing write function.
+Print content.Bytes a serem escritos: 12.
+Conteudo escrito: aaabcdefghij
+Total de bytes escritos: 12
+Executing seek function.
+Offset para deslocar: 100
+Offset deslocado:100
+Executing write function.
+Print content.Bytes a serem escritos: 2.
+Conteudo escrito: ##
+Total de bytes escritos: 2
+Executing close function.
+
+
+Executing open function.
+Executing write function.
+Print content.Bytes a serem escritos: 12.
+Conteudo escrito: aaabcdefghij
+Total de bytes escritos: 12
+Executing seek function.
+Offset para deslocar: 100000
+Offset deslocado:100000
+Executing write function.
+Print content.Bytes a serem escritos: 2.
+Conteudo escrito: ##
+Total de bytes escritos: 2
+Executing seek function.
+Offset para deslocar: 100001
+Offset deslocado:100001
+Executing write function.
+Print content.Bytes a serem escritos: 5.
+Conteudo escrito: @@@@@
+Total de bytes escritos: 5
+
+
+Executing open function.
+Executing seek function.
+Offset para deslocar: 50000
+Offset deslocado:50000
+Executing read function.
+Bytes a serem lidos: 2.
+Conteudo do arquivo: 
+Total de bytes lidos: 2
+lastdataread: Executing seek function.
+Offset para deslocar: 100003
+Offset deslocado:100003
+Executing write function.
+Print last buffer.Bytes a serem escritos: 2.
+Conteudo escrito: 
+Total de bytes escritos: 2
+
+
