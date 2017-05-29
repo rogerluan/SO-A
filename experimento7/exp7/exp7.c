@@ -61,36 +61,31 @@ typedef enum {
     FunctionClose
 } Function;
 
+Function getFunction(char *arg);
 int openFile(char *fileName, bool shouldCreate);
 
 int main(int argc, char *argv[]) {
     int argumentPosition = 1;
-    int argumentCount = argc;
+    int argumentCount = argc - 1;
+    int argumentsRead = 0;
     
     if (strcmp(argv[1], "open") != 0) {
-        printf("O primeiro argumento deve abir um arquivo.");
+        printf("O primeiro argumento deve abrir um arquivo. Abortando.\n");
         return -1;
     }
     
     bool isCreatingFile = true;
     char fileName[1][FILE_NAME_MAX_SIZE];
     int descriptor = -1;
-    int offset = 0; // Offset used in the seek
+    size_t lastSizeRead = 0;
+    char *lastDataRead = malloc(lastSizeRead);
     
     while (argumentCount > 0) { // Loop until there are no more arguments
-        Function function = 0;
-        printf("uma funcao\n");
-        if (strcmp(argv[argumentPosition], "open") == 0) { function = FunctionOpen; }
-        else if (strcmp(argv[argumentPosition], "write") == 0) { function = FunctionWrite; }
-        else if (strcmp(argv[argumentPosition], "read") == 0) { function = FunctionRead; }
-        else if (strcmp(argv[argumentPosition], "seek") == 0) { function = FunctionSeek; }
-        else if (strcmp(argv[argumentPosition], "close") == 0) { function = FunctionClose; }
-        else {
-            //it's an argument
-        }
+        Function function = getFunction(argv[argumentPosition]);
         
         switch (function) {
             case FunctionOpen: {
+                printf("Executing open function.\n");
                 if ((strcmp(argv[argumentPosition + 1], "criar") == 0) || (strcmp(argv[argumentPosition + 1], "new") == 0)) {
                     isCreatingFile = true;
                 } else if ((strcmp(argv[argumentPosition + 1], "abrir") == 0) || (strcmp(argv[argumentPosition + 1], "old") == 0)) {
@@ -100,53 +95,80 @@ int main(int argc, char *argv[]) {
                     exit(-1);
                 }
                 strcpy(fileName[0], argv[argumentPosition + 2]);
-                argumentPosition += 3;
+                descriptor = openFile(fileName[0], isCreatingFile);
+                argumentsRead = 3;
+                argumentPosition += argumentsRead;
                 break;
             }
             case FunctionWrite: {
-                descriptor = openFile(fileName[0], isCreatingFile);
-                lseek(descriptor, offset, SEEK_SET);
-                size_t bytesToWrite = atoi(argv[argumentPosition + 2]);
-                size_t bytesWritten = write(descriptor, argv[argumentPosition + 1], bytesToWrite);
-                printf("String to write: %s\nBytes to write: %zd\nBytes written: %zd\n", argv[argumentPosition + 1], bytesToWrite, bytesWritten);
+                printf("Executing write function.\n");
+                
+                size_t bytesToWrite;
+                char *buffer;
+
+                if (argumentCount == 1 || (argumentCount > 1 && (getFunction(argv[argumentPosition + 1]) == 0))) { // There are no more parameters after write function
+                    printf("Print last buffer.");
+                    bytesToWrite = lastSizeRead;
+                    buffer = lastDataRead;
+                } else {
+                    printf("Print content.");
+                    bytesToWrite = atoi(argv[argumentPosition + 2]);
+                    buffer = argv[argumentPosition + 1];
+                }
+                
+                size_t totalBytesWritten = 0;
+                size_t bytesWritten = 0;
+                printf("Bytes a serem escritos: %zd.\n", bytesToWrite);
+                while (totalBytesWritten <= bytesToWrite) {
+                    bytesWritten = write(descriptor, buffer + bytesWritten, bytesToWrite);
+                    totalBytesWritten += bytesWritten;
+                    bytesToWrite -= bytesWritten;
+                }
+                printf("Conteudo escrito: %s\nTotal de bytes escritos: %zd\n", buffer, bytesWritten);
                 isCreatingFile = false;
-                argumentPosition += 3;
+                argumentsRead = 3;
+                argumentPosition += argumentsRead;
                 break;
             }
             case FunctionRead: {
-                descriptor = openFile(fileName[0], isCreatingFile);
-                lseek(descriptor, offset, SEEK_SET);
+                printf("Executing read function.\n");
                 size_t bytesToRead = atoi(argv[argumentPosition + 1]);
-                size_t totalBytesRead = 0;
-//                printf("Bytes to read: %zd", bytesToRead);
-                printf("Conteudo do arquivo: ");
+                size_t totalBytesRead = 0; // Total number of bytes read
+                size_t bytesRead = 0;      // Bytes read in one operation
+                printf("Bytes a serem lidos: %zd.\n", bytesToRead);
+                char *buffer = malloc(bytesToRead);
                 while (totalBytesRead <= bytesToRead) {
-                    char *buffer = malloc(bytesToRead);
-                    size_t bytesRead = read(descriptor, buffer, bytesToRead);
-                    printf("%s", buffer);
+                    bytesRead = read(descriptor, buffer + bytesRead, bytesToRead);
                     totalBytesRead += bytesRead;
                     bytesToRead -= bytesRead;
                 }
-                printf("\n");
-                argumentPosition += 2;
+                printf("Conteudo do arquivo: %s\nTotal de bytes lidos: %zd\n", buffer, totalBytesRead);
+                lastDataRead = buffer;
+                lastSizeRead = totalBytesRead;
+                printf("lastdataread: %s", lastDataRead);
+                argumentsRead = 2;
+                argumentPosition += argumentsRead;
                 break;
             }
             case FunctionSeek: {
-                descriptor = openFile(fileName[0], isCreatingFile);
-                offset = atoi(argv[argumentPosition + 1]);
-                lseek(descriptor, offset, SEEK_SET); // Constant defined in stdio
-                
-                argumentPosition += 2;
+                printf("Executing seek function.\n");
+                off_t offsetToSeek = atoi(argv[argumentPosition + 1]);
+                off_t offsetSought = lseek(descriptor, offsetToSeek, SEEK_SET);
+                printf("Offset para deslocar: %lld\nOffset deslocado:%lld\n", offsetToSeek, offsetSought);
+                argumentsRead = 2;
+                argumentPosition += argumentsRead;
                 break;
             }
             case FunctionClose: {
-                argumentPosition++;
+                printf("Executing close function.\n");
+                argumentsRead = 1;
+                argumentPosition += argumentsRead;
+                close(descriptor);
                 break;
             }
         }
-        close(descriptor);
-        printf("argCount: %d, arg pos: %d\n", argumentCount, argumentPosition);
-        argumentCount -= argumentPosition; // argumentCount = argumentCount - number of arguments read + 1(inc)
+//        printf("argCount: %d, arg pos: %d\n", argumentCount, argumentPosition);
+        argumentCount -= argumentsRead; // argumentCount = argumentCount - number of arguments read + 1(inc)
     }
     return 1;
 }
@@ -166,6 +188,33 @@ int openFile(char *fileName, bool shouldCreate) {
     return descriptor;
 }
 
+//if (strcmp(argv[argumentPosition], "open") == 0) { function = FunctionOpen; }
+//else if (strcmp(argv[argumentPosition], "write") == 0) { function = FunctionWrite; }
+//else if (strcmp(argv[argumentPosition], "read") == 0) { function = FunctionRead; }
+//else if (strcmp(argv[argumentPosition], "seek") == 0) { function = FunctionSeek; }
+//else if (strcmp(argv[argumentPosition], "close") == 0) { function = FunctionClose; }
+//else {
+//    printf("Lendo argumento que nao eh funcao!");
+//}
+
+Function getFunction(char *arg) {
+    Function function = 0;
+    if (strcmp(arg, "open") == 0) { function = FunctionOpen; }
+    else if (strcmp(arg, "write") == 0) { function = FunctionWrite; }
+    else if (strcmp(arg, "read") == 0) { function = FunctionRead; }
+    else if (strcmp(arg, "seek") == 0) { function = FunctionSeek; }
+    else if (strcmp(arg, "close") == 0) { function = FunctionClose; }
+    else {
+        printf("Lendo argumento que nao eh funcao!");
+    }
+    return function;
+}
+
+void print(const char * __restrict fmt, ...) {
+#ifdef DEBUG
+//    printf("%s", fmt, ##__VA_ARGS__);
+#endif
+}
 
 //#ifdef DEBUG
 //        printf("filePath: %s", fileName);
