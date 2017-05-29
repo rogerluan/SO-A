@@ -44,6 +44,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <stdbool.h>
+#include <errno.h>
 
 #include <stdlib.h>
 #include <string.h>
@@ -60,9 +61,7 @@ typedef enum {
     FunctionClose
 } Function;
 
-
-void detectFunction(Function function);
-char *getArgument();
+int openFile(char *fileName, bool shouldCreate);
 
 int main(int argc, char *argv[]) {
     int argumentPosition = 1;
@@ -76,9 +75,11 @@ int main(int argc, char *argv[]) {
     bool isCreatingFile = true;
     char fileName[1][FILE_NAME_MAX_SIZE];
     int descriptor = -1;
+    int offset = 0; // Offset used in the seek
     
     while (argumentCount > 0) { // Loop until there are no more arguments
         Function function = 0;
+        printf("uma funcao\n");
         if (strcmp(argv[argumentPosition], "open") == 0) { function = FunctionOpen; }
         else if (strcmp(argv[argumentPosition], "write") == 0) { function = FunctionWrite; }
         else if (strcmp(argv[argumentPosition], "read") == 0) { function = FunctionRead; }
@@ -90,42 +91,87 @@ int main(int argc, char *argv[]) {
         
         switch (function) {
             case FunctionOpen: {
-                if ((strcmp(argv[argumentPosition + 1], "criar") == 0) || (strcmp(argv[argumentPosition + 1], "create") == 0)) {
+                if ((strcmp(argv[argumentPosition + 1], "criar") == 0) || (strcmp(argv[argumentPosition + 1], "new") == 0)) {
                     isCreatingFile = true;
-                } else if ((strcmp(argv[argumentPosition + 1], "abrir") == 0) || (strcmp(argv[argumentPosition + 1], "open") == 0)) {
+                } else if ((strcmp(argv[argumentPosition + 1], "abrir") == 0) || (strcmp(argv[argumentPosition + 1], "old") == 0)) {
                     isCreatingFile = false;
+                } else {
+                    printf("Argumento da funcao open invalido. Entre com 'criar' ou 'abrir'. Abortando.\n");
+                    exit(-1);
                 }
                 strcpy(fileName[0], argv[argumentPosition + 2]);
+                argumentPosition += 3;
                 break;
             }
             case FunctionWrite: {
-                if (isCreatingFile) {
-                    descriptor = open(fileName[0], O_WRONLY | O_CREAT);
-                } else {
-                    descriptor = open(fileName[0], O_WRONLY);
-                }
-                ssize_t bytesToWrite = atoi(argv[argumentPosition + 2]);
-                write(descriptor, argv[argumentPosition + 1], bytesToWrite);
-                close(descriptor);
+                descriptor = openFile(fileName[0], isCreatingFile);
+                lseek(descriptor, offset, SEEK_SET);
+                size_t bytesToWrite = atoi(argv[argumentPosition + 2]);
+                size_t bytesWritten = write(descriptor, argv[argumentPosition + 1], bytesToWrite);
+                printf("String to write: %s\nBytes to write: %zd\nBytes written: %zd\n", argv[argumentPosition + 1], bytesToWrite, bytesWritten);
                 isCreatingFile = false;
+                argumentPosition += 3;
                 break;
             }
             case FunctionRead: {
+                descriptor = openFile(fileName[0], isCreatingFile);
+                lseek(descriptor, offset, SEEK_SET);
+                size_t bytesToRead = atoi(argv[argumentPosition + 1]);
+                size_t totalBytesRead = 0;
+//                printf("Bytes to read: %zd", bytesToRead);
+                printf("Conteudo do arquivo: ");
+                while (totalBytesRead <= bytesToRead) {
+                    char *buffer = malloc(bytesToRead);
+                    size_t bytesRead = read(descriptor, buffer, bytesToRead);
+                    printf("%s", buffer);
+                    totalBytesRead += bytesRead;
+                    bytesToRead -= bytesRead;
+                }
+                printf("\n");
+                argumentPosition += 2;
                 break;
             }
             case FunctionSeek: {
+                descriptor = openFile(fileName[0], isCreatingFile);
+                offset = atoi(argv[argumentPosition + 1]);
+                lseek(descriptor, offset, SEEK_SET); // Constant defined in stdio
+                
+                argumentPosition += 2;
                 break;
             }
             case FunctionClose: {
+                argumentPosition++;
                 break;
             }
         }
-        argumentCount--; // one argument was read, decrement it
+        close(descriptor);
+        printf("argCount: %d, arg pos: %d\n", argumentCount, argumentPosition);
+        argumentCount -= argumentPosition; // argumentCount = argumentCount - number of arguments read + 1(inc)
     }
     return 1;
 }
 
 /// Open Helper Functions
+int openFile(char *fileName, bool shouldCreate) {
+    int descriptor = -1;
+    if (shouldCreate) {
+        descriptor = open(fileName, O_RDWR | O_CREAT | O_EXCL);
+    } else {
+        descriptor = open(fileName, O_RDWR);
+    }
+    if (descriptor == -1) {
+        fprintf(stderr, "Error opening file at path: %s\nError: %s\n", fileName, strerror(errno));
+        exit(errno);
+    }
+    return descriptor;
+}
+
+
+//#ifdef DEBUG
+//        printf("filePath: %s", fileName);
+//        strcat(fileName, "/Users/rogerluan/Documents/Projects/SO-A/experimento7/exp7/");
+//        printf("filePath: %s", fileName);
+//#endif
 
 // Pegar o proximo argumento
 // Checar se o argumento é uma funcao
