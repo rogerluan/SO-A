@@ -11,43 +11,30 @@
 //
 
 // Open
-// -function 1 -path fileName -type read/write
+// open [new/old] [fileName]
 
 // Write
-// -function 2 -input "lorem ipsum" -dataSize 1000
+// write [dataToWrite] [numberOfBytesToWrite]
 
 // Read
-// -function 3 -dataSize 1000
+// read [numberOfBytesToRead]
 
 // Seek
-// -function 4 -offset 123
+// seek [offset]
 
 // Close
-// -function 5
+// close
 
-//     ./noemdoprograma -function 4 -input "/root/dump.txt" -offset 10 -function 2 -output "/usr/src/releasetools/text.txt" -input "ABCDEFGHIJKLMNOPOQESG" -dataSize 1000
-
-/**
- le o proximo argumento
- se for open, switch case no open, e le os args (arquivo novo/existente e a path)
- le o proximo argumento
- ve qual funcao que é (read, write, seek, close)
- entre no switch case da função. Dentro da função, chame OPEN.
- Caso a função seja write e o open em arquivo novo, modificar a flag pra ser um arquivo velho.
- execute a funcao (read, write, seek)
- Feche o descritor
- */
 
 #include <stdio.h>      // printf
-//#include <sys/stat.h>
 #include <fcntl.h>      // open options
 #include <stdbool.h>    // boolean type
 #include <errno.h>      // errno constant
-
 #include <stdlib.h>     // malloc
 #include <string.h>     // string helper functions (strcmp, strcpy)
-//#include <sys/types.h>
 #include <unistd.h>     // lseek, open, etc
+//#include <sys/stat.h>
+//#include <sys/types.h>
 
 #define FILE_NAME_MAX_SIZE 30
 
@@ -60,7 +47,31 @@ typedef enum {
     FunctionClose
 } Function;
 
+/**
+ Returns an enum representing a function, based on the arguments sent.
+ 
+ @param arg A char pointer containing a string that might represent a function. The function will be extracted from this argument.
+ @return enum that identifies which function was read. Returns FunctionNull if the argument is not a valid function.
+ */
 Function getFunction(char *arg);
+
+/**
+ Checks if we're opening a new file.
+ 
+ @param arg A char pointer that might represent a new file argument or not.
+ Exits the program if the argument is invalid.
+ Accepted strings: "criar" and "new" for new files, and "abrir" and "old" when opening old files.
+ @return true if the user is creating a new file, otherwise, false.
+ */
+bool isNewFile(char *arg);
+
+/**
+ Opens the file based on the arguments.
+ 
+ @param fileName Name of the file to be opened.
+ @param shouldCreate Boolean indicating if it should create a new file or open an existing one.
+ @return returns the descriptor created, if the file opening was successful. Otherwise, returns -1.
+ */
 int openFile(char *fileName, bool shouldCreate);
 
 int main(int argc, char *argv[]) {
@@ -86,14 +97,7 @@ int main(int argc, char *argv[]) {
             case FunctionNull: break;
             case FunctionOpen: {
                 printf("Executing open function.\n");
-                if ((strcmp(argv[argumentPosition + 1], "criar") == 0) || (strcmp(argv[argumentPosition + 1], "new") == 0)) {
-                    isCreatingFile = true;
-                } else if ((strcmp(argv[argumentPosition + 1], "abrir") == 0) || (strcmp(argv[argumentPosition + 1], "old") == 0)) {
-                    isCreatingFile = false;
-                } else {
-                    printf("Argumento da funcao open invalido. Entre com 'criar' ou 'abrir'. Abortando.\n");
-                    exit(-1);
-                }
+                isCreatingFile = isNewFile(argv[argumentPosition + 1]);
                 strcpy(fileName[0], argv[argumentPosition + 2]);
                 descriptor = openFile(fileName[0], isCreatingFile);
                 argumentsRead = 3;
@@ -106,7 +110,7 @@ int main(int argc, char *argv[]) {
                 size_t bytesToWrite;
                 char *buffer;
 
-                if (argumentCount == 1 || (argumentCount > 1 && (getFunction(argv[argumentPosition + 1]) == FunctionNull))) { // There are no more parameters after write function
+                if (argumentCount == 1 || (argumentCount > 1 && (getFunction(argv[argumentPosition + 1]) != FunctionNull))) { // There are no more parameters after write function
                     printf("Print last buffer.");
                     bytesToWrite = lastSizeRead;
                     buffer = lastDataRead;
@@ -173,10 +177,33 @@ int main(int argc, char *argv[]) {
     return 1;
 }
 
-/**
- * Helper Functions
- *
- */
+/***************************************************/
+//
+//                  Helper Functions
+//
+/***************************************************/
+
+Function getFunction(char *arg) {
+    Function function = FunctionNull;
+    if (strcmp(arg, "open") == 0) { function = FunctionOpen; }
+    else if (strcmp(arg, "write") == 0) { function = FunctionWrite; }
+    else if (strcmp(arg, "read") == 0) { function = FunctionRead; }
+    else if (strcmp(arg, "seek") == 0) { function = FunctionSeek; }
+    else if (strcmp(arg, "close") == 0) { function = FunctionClose; }
+    return function;
+}
+
+bool isNewFile(char *arg) {
+    if ((strcmp(arg, "criar") == 0) || (strcmp(arg, "new") == 0)) {
+        return true;
+    } else if ((strcmp(arg, "abrir") == 0) || (strcmp(arg, "old") == 0)) {
+        return false;
+    } else {
+        printf("Argumento da funcao open invalido. Entre com 'criar' ou 'abrir'. Abortando.\n\n\n");
+        exit(-1);
+    }
+}
+
 int openFile(char *fileName, bool shouldCreate) {
     int descriptor = -1;
     if (shouldCreate) {
@@ -191,19 +218,9 @@ int openFile(char *fileName, bool shouldCreate) {
     return descriptor;
 }
 
-Function getFunction(char *arg) {
-    Function function = -1;
-    if (strcmp(arg, "open") == 0) { function = FunctionOpen; }
-    else if (strcmp(arg, "write") == 0) { function = FunctionWrite; }
-    else if (strcmp(arg, "read") == 0) { function = FunctionRead; }
-    else if (strcmp(arg, "seek") == 0) { function = FunctionSeek; }
-    else if (strcmp(arg, "close") == 0) { function = FunctionClose; }
-    return function;
-}
-
 void print(const char * __restrict fmt, ...) {
 #ifdef DEBUG
-//    printf("%s", fmt, ##__VA_ARGS__);
+//    printf("%s\n", fmt, ##__VA_ARGS__);
 #endif
 }
 

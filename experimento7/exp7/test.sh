@@ -8,6 +8,7 @@ echo "Cleaning the directory from previous files..."
 rm novo
 rm novo1
 rm novo2
+rm test_results.txt
 
 
 echo "Running the 1st test:"
